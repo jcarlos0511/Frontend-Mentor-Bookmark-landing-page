@@ -1,10 +1,25 @@
 export const data = {
   bookmark: {
     sections: {
-      nav: {},
+      nav: {
+        items: [
+          {
+            name: "Features",
+          },
+          {
+            name: "Pricing",
+          },
+          {
+            name: "Contact",
+          },
+          {
+            name: "Login",
+          },
+        ],
+      },
       hero: {},
       features: {},
-      extension: {},
+      pricing: {},
       faq: {},
       contact: {},
       footer: {},
@@ -12,6 +27,7 @@ export const data = {
     utils: {
       logoBookmark: "LogoBookmark",
       iconHamburger: "IconHamburger",
+      iconClose: "IconClose",
     },
   },
 };

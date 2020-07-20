@@ -1,5 +1,5 @@
 import React from "react";
-import { LogoBookmark, IconHamburger } from ".";
+import { LogoBookmark, IconHamburger, IconClose } from ".";
 
 const FormattedIcons = ({ name }) => {
   switch (name) {
@@ -9,6 +9,8 @@ const FormattedIcons = ({ name }) => {
     case "IconHamburger":
       return <IconHamburger />;
 
+    case "IconClose":
+      return <IconClose />;
     default:
       return null;
   }
