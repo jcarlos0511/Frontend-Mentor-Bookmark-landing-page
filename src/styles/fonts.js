@@ -10,7 +10,7 @@ import RubikMediumWOFF2 from "../fonts/Rubik/Rubik-Medium.woff2";
 
 const FontFaces = css`
   @font-face {
-    font-family: "Rubik, sans serif";
+    font-family: "Rubik";
     src: url(${RubikRegularWOFF2}) format("woff2"),
       url(${RubikRegularWOFF}) format("woff"),
       url(${RubikRegularTTF}) format("truetype");
@@ -19,7 +19,7 @@ const FontFaces = css`
   }
 
   @font-face {
-    font-family: "Rubik, sans serif";
+    font-family: "Rubik";
     src: url(${RubikMediumWOFF2}) format("woff2"),
       url(${RubikMediumWOFF}) format("woff"),
       url(${RubikMediumTTF}) format("truetype");

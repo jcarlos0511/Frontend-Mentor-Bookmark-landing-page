@@ -1,13 +1,12 @@
 import React from "react";
-
 import { GlobalStyles } from "./styles";
+import { Bookmark } from "./components";
 
 function App() {
   return (
     <>
       <GlobalStyles />
-
-      <h1>A Simple Bookmark Manager</h1>
+      <Bookmark />
     </>
   );
 }

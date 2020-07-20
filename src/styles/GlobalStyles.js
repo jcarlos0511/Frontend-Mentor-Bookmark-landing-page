@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-import { theme, FontFaces } from ".";
+
+import FontFaces from "./fonts";
+import theme from "./theme";
 
 const { colors, fonts, fontSizes } = theme;
 
