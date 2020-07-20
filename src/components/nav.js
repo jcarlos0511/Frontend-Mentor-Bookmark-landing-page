@@ -11,10 +11,7 @@ const { colors } = theme;
 
 const StyledContainer = styled.div`
   border: 1px solid red;
-  display: flex;
   position: relative;
-  align-items: center;
-  justify-content: space-between;
   padding: 2.2em 8%;
 
   & .hamburger {
@@ -22,8 +19,15 @@ const StyledContainer = styled.div`
   }
 `;
 
-const StyledMenu = styled.ul`
-  border: 5px solid green;
+const StyledMenu = styled.div`
+  border: 1px green solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const StyledMenuActive = styled.ul`
+  border: 1px solid green;
   position: fixed;
   top: 0;
   left: 0;
@@ -31,13 +35,51 @@ const StyledMenu = styled.ul`
   right: 0;
   background: ${colors.veryDarkBlue};
   opacity: 0.9;
-  margin: auto;
+  user-select: none;
+
+  & .menuHeader {
+    padding: 2.2em 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  & .logoTitle {
+    fill: ${colors.white};
+  }
+
+  & .logoCircle {
+    fill: ${colors.white};
+  }
+
+  & .logoInnerIcon {
+    fill: ${colors.veryDarkBlue};
+  }
+
+  & .menuFooter {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 12em;
+
+    & svg {
+      margin: 0 0.66em;
+    }
+  }
 `;
 
 const Nav = () => {
   const { data } = useContext(BookmarkContext);
   const { sections, utils } = data;
+
   const { nav } = sections;
+  const {
+    logoBookmark,
+    iconClose,
+    iconHamburger,
+    iconFacebook,
+    iconTwitter,
+  } = utils;
 
   const [menu, SetMenu] = useState(false);
 
@@ -45,35 +87,43 @@ const Nav = () => {
 
   return (
     <StyledContainer>
-      <FormattedIcons name={utils.logoBookmark} />
-
-      <div>
-        <input
-          type="checkbox"
-          id="hamburger"
-          className="hamburger"
-          ref={ref}
-          onChange={() => SetMenu(ref.current.checked)}
-        />
-        {/* // Show 'X' to close Menu.... */}
-        <label htmlFor="hamburger">
-          {menu ? (
-            <FormattedIcons name={utils.iconClose} />
-          ) : (
-            <FormattedIcons name={utils.iconHamburger} />
-          )}
-        </label>
-      </div>
+      <input
+        type="checkbox"
+        id="hamburger"
+        className="hamburger"
+        ref={ref}
+        onChange={() => SetMenu(ref.current.checked)}
+      />
 
       {menu ? (
-        <StyledMenu>
-          <FormattedIcons name={utils.logoBookmark} />
+        <StyledMenuActive>
+          <div className="menuHeader">
+            <FormattedIcons name={logoBookmark} />
+
+            <label htmlFor="hamburger">
+              <FormattedIcons name={iconClose} />
+            </label>
+          </div>
 
           {nav.items.map((item, index) => (
             <NavItems key={index} item={item} />
           ))}
+
+          <div className="menuFooter">
+            <FormattedIcons name={iconFacebook} />
+
+            <FormattedIcons name={iconTwitter} />
+          </div>
+        </StyledMenuActive>
+      ) : (
+        <StyledMenu>
+          <FormattedIcons name={logoBookmark} />
+
+          <label htmlFor="hamburger">
+            <FormattedIcons name={iconHamburger} />
+          </label>
         </StyledMenu>
-      ) : null}
+      )}
     </StyledContainer>
   );
 };

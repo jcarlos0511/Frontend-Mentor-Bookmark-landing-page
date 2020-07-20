@@ -1,5 +1,11 @@
 import React from "react";
-import { LogoBookmark, IconHamburger, IconClose } from ".";
+import {
+  LogoBookmark,
+  IconHamburger,
+  IconClose,
+  IconFacebook,
+  IconTwitter,
+} from ".";
 
 const FormattedIcons = ({ name }) => {
   switch (name) {
@@ -11,6 +17,12 @@ const FormattedIcons = ({ name }) => {
 
     case "IconClose":
       return <IconClose />;
+
+    case "IconFacebook":
+      return <IconFacebook />;
+
+    case "IconTwitter":
+      return <IconTwitter />;
     default:
       return null;
   }

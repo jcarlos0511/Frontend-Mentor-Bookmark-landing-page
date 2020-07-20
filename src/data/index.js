@@ -28,6 +28,8 @@ export const data = {
       logoBookmark: "LogoBookmark",
       iconHamburger: "IconHamburger",
       iconClose: "IconClose",
+      iconFacebook: "IconFacebook",
+      iconTwitter: "IconTwitter",
     },
   },
 };
