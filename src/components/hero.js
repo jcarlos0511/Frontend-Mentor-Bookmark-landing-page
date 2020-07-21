@@ -2,6 +2,13 @@ import React, { useContext } from "react";
 import BookmarkContext from "../context/bookmarkContext";
 import styled from "styled-components";
 import FormattedImages from "../styles/formattedImages";
+import { theme, Button } from "../styles";
+
+const { colors, fontSizes } = theme;
+
+const StyledContainer = styled.div`
+  padding: 2em 0;
+`;
 
 const StyledImage = styled.div`
   & .illustrationHero {
@@ -12,13 +19,52 @@ const StyledImage = styled.div`
   }
 `;
 
+const StyledContent = styled.div`
+  /* border: 1px solid blue; */
+  text-align: center;
+  margin: 0 9%;
+`;
+
+const StyledTitle = styled.h1`
+  font-size: ${fontSizes.xxxl};
+  font-weight: 500;
+`;
+
+const StyledDescription = styled.p`
+  font-size: ${fontSizes.md};
+  line-height: 1.65em;
+`;
+
+const StyledButtons = styled.div`
+  /* border: solid 1px red; */
+  display: flex;
+  justify-content: space-between;
+  margin: 0 8%;
+`;
+
 const Hero = () => {
   const { data } = useContext(BookmarkContext);
   const { utils } = data;
   return (
-    <StyledImage>
-      <FormattedImages name={utils.illustrationHero} />
-    </StyledImage>
+    <StyledContainer>
+      <StyledImage>
+        <FormattedImages name={utils.illustrationHero} />
+      </StyledImage>
+
+      <StyledContent>
+        <StyledTitle>A Simple Bookmark Manager</StyledTitle>
+
+        <StyledDescription>
+          A clean and simple interface to organize your favourite websites. Open
+          a new browser tab and see your sites load instantly. Try it for free.
+        </StyledDescription>
+      </StyledContent>
+
+      <StyledButtons>
+        <Button background={colors.softBlue} title="Get it on Chrome" />
+        <Button title="Get it on Firefox" />
+      </StyledButtons>
+    </StyledContainer>
   );
 };
 
