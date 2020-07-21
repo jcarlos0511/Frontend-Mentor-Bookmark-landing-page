@@ -23,6 +23,7 @@ const FormattedIcons = ({ name }) => {
 
     case "IconTwitter":
       return <IconTwitter />;
+
     default:
       return null;
   }

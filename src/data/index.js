@@ -30,6 +30,7 @@ export const data = {
       iconClose: "IconClose",
       iconFacebook: "IconFacebook",
       iconTwitter: "IconTwitter",
+      illustrationHero: "IllustrationHero",
     },
   },
 };

@@ -34,7 +34,7 @@ const StyledMenuActive = styled.ul`
   bottom: 0;
   right: 0;
   background: ${colors.veryDarkBlue};
-  opacity: 0.9;
+  opacity: 0.95;
   user-select: none;
 
   & .menuHeader {
