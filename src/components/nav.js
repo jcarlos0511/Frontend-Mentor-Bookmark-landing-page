@@ -36,6 +36,7 @@ const StyledMenuActive = styled.ul`
   background: ${colors.veryDarkBlue};
   opacity: 0.95;
   user-select: none;
+  z-index: 2;
 
   & .menuHeader {
     padding: 2.2em 8%;
@@ -57,10 +58,12 @@ const StyledMenuActive = styled.ul`
   }
 
   & .menuFooter {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 12em;
+    position: absolute;
+    bottom: 50px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 100px;
 
     & svg {
       margin: 0 0.66em;

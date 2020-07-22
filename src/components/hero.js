@@ -2,15 +2,21 @@ import React, { useContext } from "react";
 import BookmarkContext from "../context/bookmarkContext";
 import styled from "styled-components";
 import FormattedImages from "../styles/formattedImages";
-import { theme, Button } from "../styles";
+import { theme, Button, BgImage } from "../styles";
 
 const { colors, fontSizes } = theme;
 
 const StyledContainer = styled.div`
   padding: 2.2em 0;
+  overflow-x: hidden;
 `;
 
 const StyledImage = styled.div`
+  position: absolute;
+  top: 8.1em;
+  left: 0;
+  right: 0;
+
   & .illustrationHero {
     border: 1px orange solid;
     width: 100%;
@@ -50,6 +56,7 @@ const Hero = () => {
   const { title, description } = hero;
   return (
     <StyledContainer>
+      <BgImage />
       <StyledImage>
         <FormattedImages name={utils.illustrationHero} />
       </StyledImage>

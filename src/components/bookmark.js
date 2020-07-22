@@ -1,12 +1,13 @@
 import React from "react";
 import BookmarkState from "../context/bookmarkState";
-import { Nav, Hero } from ".";
+import { Nav, Hero, Features } from ".";
 
 const Bookmark = () => {
   return (
     <BookmarkState>
       <Nav />
       <Hero />
+      <Features />
     </BookmarkState>
   );
 };
