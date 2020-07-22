@@ -17,7 +17,11 @@ export const data = {
           },
         ],
       },
-      hero: {},
+      hero: {
+        title: "A Simple Bookmark Manager",
+        description:
+          "A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free.",
+      },
       features: {},
       pricing: {},
       faq: {},

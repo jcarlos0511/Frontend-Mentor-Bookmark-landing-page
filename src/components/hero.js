@@ -7,7 +7,7 @@ import { theme, Button } from "../styles";
 const { colors, fontSizes } = theme;
 
 const StyledContainer = styled.div`
-  padding: 2em 0;
+  padding: 2.2em 0;
 `;
 
 const StyledImage = styled.div`
@@ -44,7 +44,10 @@ const StyledButtons = styled.div`
 
 const Hero = () => {
   const { data } = useContext(BookmarkContext);
-  const { utils } = data;
+  const { sections, utils } = data;
+
+  const { hero } = sections;
+  const { title, description } = hero;
   return (
     <StyledContainer>
       <StyledImage>
@@ -52,12 +55,9 @@ const Hero = () => {
       </StyledImage>
 
       <StyledContent>
-        <StyledTitle>A Simple Bookmark Manager</StyledTitle>
+        <StyledTitle>{title}</StyledTitle>
 
-        <StyledDescription>
-          A clean and simple interface to organize your favourite websites. Open
-          a new browser tab and see your sites load instantly. Try it for free.
-        </StyledDescription>
+        <StyledDescription>{description}</StyledDescription>
       </StyledContent>
 
       <StyledButtons>

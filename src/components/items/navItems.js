@@ -2,7 +2,7 @@ import React from "react";
 
 import styled from "styled-components";
 import { theme } from "../../styles";
-const { colors } = theme;
+const { colors, fontSizes } = theme;
 
 const NavItem = styled.li`
   color: ${colors.white};
@@ -11,6 +11,7 @@ const NavItem = styled.li`
   padding: 1.4em 0;
   border-top: 1px solid ${colors.grayishBlue};
   text-align: center;
+  font-size: ${fontSizes.md};
 
   &:last-of-type a {
     border: 2px solid ${colors.white};

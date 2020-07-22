@@ -3,6 +3,7 @@ const theme = {
     softBlue: "#5267DF",
     softRed: "#F95656",
     grayishBlue: "#9093A1",
+    veryGrayishBlue: "#5D606E",
     veryDarkBlue: "#242B46",
     white: "#FFFFFF",
   },
@@ -14,12 +15,12 @@ const theme = {
 
   fontSizes: {
     xxs: "10px",
-    xs: "12px",
-    md: "15px",
+    xs: "0.66em",
+    md: "0.83em",
     lg: "18px",
-    xl: "24px",
-    xxl: "28px",
-    xxxl: "30px",
+    xl: "1.33em",
+    xxl: "1.55em",
+    xxxl: "1.66em",
   },
 };
 
