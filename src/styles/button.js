@@ -12,7 +12,7 @@ const StyledButton = styled.button`
     props.background ? props.background : colors.white};
   color: ${(props) =>
     props.background ? colors.white : colors.veryGrayishBlue};
-  font-size: ${fontSizes.md};
+  font-size: ${fontSizes.sm};
   box-shadow: 0 5px 10px ${colors.lightGrayishBlue};
   font-weight: 600;
 `;

@@ -37,7 +37,7 @@ const StyledTitle = styled.h1`
 `;
 
 const StyledDescription = styled.p`
-  font-size: ${fontSizes.md};
+  font-size: ${fontSizes.sm};
   line-height: 1.65em;
 `;
 

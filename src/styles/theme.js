@@ -15,9 +15,9 @@ const theme = {
   },
 
   fontSizes: {
-    xxs: "10px",
     xs: "0.66em",
-    md: "0.83em",
+    sm: "0.83em",
+    md: "0.91em",
     lg: "18px",
     xl: "1.33em",
     xxl: "1.55em",
