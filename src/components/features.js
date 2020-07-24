@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import BookmarkContext from "../context/bookmarkContext";
 import styled from "styled-components";
 import { theme } from "../styles";
@@ -17,7 +17,7 @@ const StyledContainer = styled.div`
   }
 
   & input[id="Simple Bookmarking"]:checked ~ .tab-Bookmarking {
-    display: block;
+    display: inline-block;
   }
 
   &
@@ -34,7 +34,7 @@ const StyledContainer = styled.div`
   }
 
   & input[id="Speedy Searching"]:checked ~ .tab-Searching {
-    display: block;
+    display: inline-block;
   }
 
   & input[id="Speedy Searching"]:checked ~ ul [for="Speedy Searching"]::after {
@@ -48,7 +48,7 @@ const StyledContainer = styled.div`
   }
 
   & input[id="Easy Sharing"]:checked ~ .tab-Sharing {
-    display: block;
+    display: inline-block;
   }
 
   & input[id="Easy Sharing"]:checked ~ ul [for="Easy Sharing"]::after {
@@ -88,6 +88,13 @@ const Features = () => {
   const { features } = sections;
   const { title, description, list, tabs } = features;
 
+  const [state, setState] = useState({
+    menu: "Simple Bookmarking",
+  });
+
+  const ChangeMenu = (e) =>
+    setState({ ...state, [e.target.name]: e.target.value });
+
   return (
     <StyledContainer>
       <StyledTitle>{title}</StyledTitle>
@@ -95,7 +102,15 @@ const Features = () => {
       <StyledDescription>{description}</StyledDescription>
 
       {list.map((item, index) => (
-        <input key={index} type="radio" id={item.name} name="menu" />
+        <input
+          key={index}
+          type="radio"
+          id={item.name}
+          name="menu"
+          value={item.name}
+          checked={state.menu === item.name}
+          onChange={ChangeMenu}
+        />
       ))}
 
       <StyledMenu>

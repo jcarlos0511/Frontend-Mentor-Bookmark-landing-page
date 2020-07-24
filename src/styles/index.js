@@ -1,6 +1,16 @@
 import theme from "./theme";
 import GlobalStyles from "./GlobalStyles";
 import Button from "./button";
-import BgImage from "./bgImage";
+import BgImageRight from "./bgImageRight";
 
-export { theme, GlobalStyles, Button, BgImage };
+import FormattedImages from "./formattedImages";
+import BgImageLeft from "./bgImageLeft";
+
+export {
+  theme,
+  GlobalStyles,
+  Button,
+  BgImageRight,
+  BgImageLeft,
+  FormattedImages,
+};
