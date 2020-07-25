@@ -7,6 +7,7 @@ const { fontSizes } = theme;
 const StyledTabs = styled.article`
   display: none;
   position: relative;
+  margin-top: 1.5em;
 
   & svg {
     max-width: 375px;
@@ -16,16 +17,17 @@ const StyledTabs = styled.article`
 
   & .illustrationFeaturesTab1 {
     margin-top: 1em;
+    margin-bottom: 3em;
     height: 212px;
   }
 `;
 
 const StyledImage = styled.div`
-  border: 1px solid green;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
+  z-index: -1;
 `;
 
 const StyledTitle = styled.h2`
@@ -41,12 +43,11 @@ const StyledDescription = styled.p`
 const TabItems = ({ tab }) => {
   const { id, title, description, image } = tab;
   return (
-    <StyledTabs className={id}>
-      <BgImageLeft />
-
+    <StyledTabs className={id} tabs>
       <StyledImage>
-        <FormattedImages name={image} />
+        <BgImageLeft />
       </StyledImage>
+      <FormattedImages name={image} />
       <StyledTitle>{title}</StyledTitle>
       <StyledDescription>{description}</StyledDescription>
     </StyledTabs>

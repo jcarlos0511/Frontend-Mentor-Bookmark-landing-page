@@ -11,16 +11,16 @@ const IllustrationFeaturesTab3 = () => {
       className="illustrationFeaturesTab3"
     >
       <defs>
-        <rect id="a" width="350" height="346" rx="8"></rect>
-        <path id="c" d="M0 .048h349.781V296H0z"></path>
-        <path id="e" d="M0 .048h157.825v219.844H0z"></path>
+        <rect id="tab3" width="350" height="346" rx="8"></rect>
+        <path id="tab3-c" d="M0 .048h349.781V296H0z"></path>
+        <path id="tab3-e" d="M0 .048h157.825v219.844H0z"></path>
       </defs>
       <g fill="none" fillRule="evenodd">
-        <mask id="b" fill="#fff">
-          <use xlinkHref="#a"></use>
+        <mask id="tab3-b" fill="#fff">
+          <use xlinkHref="#tab3"></use>
         </mask>
-        <use fill="#E8EAF6" fillRule="nonzero" xlinkHref="#a"></use>
-        <g mask="url(#b)">
+        <use fill="#E8EAF6" fillRule="nonzero" xlinkHref="#tab3"></use>
+        <g mask="url(#tab3-b)">
           <path fill="#242A45" d="M-3.53.197h547v59h-547z"></path>
           <g fill="#FFF" transform="translate(22.47 14.197)">
             <circle cx="16" cy="16" r="16" opacity="0.245"></circle>
@@ -36,13 +36,13 @@ const IllustrationFeaturesTab3 = () => {
         <rect width="237" height="34" x="27" y="229" fill="#FFF" rx="8"></rect>
         <rect width="237" height="34" x="27" y="277" fill="#FFF" rx="8"></rect>
         <g transform="matrix(-1 0 0 1 440 83)">
-          <mask id="d" fill="#fff">
-            <use xlinkHref="#c"></use>
+          <mask id="tab3-d" fill="#fff">
+            <use xlinkHref="#tab3-c"></use>
           </mask>
           <path
             fill="#3A499E"
             d="M348.707 250.34c-.67 2.018-1.715 3.998-3.174 5.935-25.202 33.474-119.376 44.632-212.224 37.814-48.476-3.562-82.67-24.526-104.281-43.75a175.95 175.95 0 01-13.36-13.222c-4.669-5.145-8.313-10.86-10.91-16.895-7.647-17.778-6.174-38.316 5.123-55.161 9.577-14.276 22.722-24.824 29.513-36.543C52.326 106.2-16.043 49.782 28.448 14.138 44.152 1.554 77.608-1.35 114.11.602c44.428 2.378 93.365 11.955 120.284 20.045 55.712 16.737 90.58 40.98 98.539 68.256 7.958 27.276-13.311 39.618-31.88 65.654-17.495 24.526 58.553 62.997 47.654 95.783"
-            mask="url(#d)"
+            mask="url(#tab3-d)"
           ></path>
           <path
             fill="#306299"
@@ -53,13 +53,13 @@ const IllustrationFeaturesTab3 = () => {
             d="M237 89.118S223.824 88.77 210 83l6.496 12.254L235.249 101 237 89.118z"
           ></path>
           <g transform="translate(2 2)">
-            <mask id="f" fill="#fff">
-              <use xlinkHref="#e"></use>
+            <mask id="tab3-f" fill="#fff">
+              <use xlinkHref="#tab3-e"></use>
             </mask>
             <path
               fill="#FFF"
               d="M157.066 52.186C148.954 92.345 11.06 153.876 4.43 219.892c-7.118-17.752-5.747-38.258 4.77-55.078 8.914-14.255 21.15-24.787 27.471-36.489 12.039-22.282-51.605-78.618-10.19-114.208C41.1 1.552 72.242-1.348 106.221.602c10.344 2.364 58.164 15.331 50.845 51.584"
-              mask="url(#f)"
+              mask="url(#tab3-f)"
               opacity="0.152"
             ></path>
           </g>

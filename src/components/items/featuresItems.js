@@ -13,7 +13,6 @@ const StyledItem = styled.li`
 `;
 
 const StyledName = styled.label`
-  /* border: 1px solid black; */
   padding: 1em;
   display: block;
   position: relative;

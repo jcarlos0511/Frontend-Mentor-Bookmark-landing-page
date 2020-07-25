@@ -15,7 +15,7 @@ const theme = {
   },
 
   fontSizes: {
-    xs: "0.66em",
+    xs: "0.67em",
     sm: "0.83em",
     md: "0.91em",
     lg: "18px",

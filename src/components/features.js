@@ -7,7 +7,6 @@ import { FeaturesItems, TabItems } from ".";
 const { colors, fontSizes } = theme;
 
 const StyledContainer = styled.div`
-  border: 1px solid green;
   margin: 0 8%;
   padding: 2.2em 0;
   text-align: center;
@@ -73,7 +72,6 @@ const StyledDescription = styled.p`
 `;
 
 const StyledMenu = styled.ul`
-  /* border: 1px solid orange; */
   padding: 1.5em 0;
 
   & li:last-child {

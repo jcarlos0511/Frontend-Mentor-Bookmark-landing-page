@@ -18,7 +18,6 @@ const StyledImage = styled.div`
   right: 0;
 
   & .illustrationHero {
-    border: 1px orange solid;
     width: 100%;
     height: 256px;
     margin: auto;
@@ -26,7 +25,6 @@ const StyledImage = styled.div`
 `;
 
 const StyledContent = styled.div`
-  /* border: 1px solid blue; */
   text-align: center;
   margin: 0 9%;
 `;

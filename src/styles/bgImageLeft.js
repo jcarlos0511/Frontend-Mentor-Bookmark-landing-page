@@ -11,7 +11,7 @@ const StyledBgImage = styled.div`
   height: 200px;
   border-bottom-right-radius: 100px;
   border-top-right-radius: 100px;
-  margin: 3.25em -2.2em;
+  margin: 3.25em -22.5%;
 `;
 
 const BgImageLeft = () => {

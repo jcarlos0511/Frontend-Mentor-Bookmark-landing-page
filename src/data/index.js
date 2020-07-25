@@ -55,7 +55,16 @@ export const data = {
           },
         ],
       },
-      pricing: {},
+      extension: {
+        title: "Download the extension",
+        description:
+          "We’ve got more browsers in the pipeline. Please do let us know if you’ve got a favourite you’d like us to prioritize.",
+        browsers: [
+          { title: "Add to Chrome", version: "Minimun version 62" },
+          { title: "Add to Firefox", version: "Minimun version 55" },
+          { title: "Add to Opera", version: "Minimun version 46" },
+        ],
+      },
       faq: {},
       contact: {},
       footer: {},
@@ -67,6 +76,9 @@ export const data = {
       iconFacebook: "IconFacebook",
       iconTwitter: "IconTwitter",
       illustrationHero: "IllustrationHero",
+      logoChrome: "LogoChrome",
+      logoFirefox: "LogoFirefox",
+      logoOpera: "LogoOpera",
     },
   },
 };

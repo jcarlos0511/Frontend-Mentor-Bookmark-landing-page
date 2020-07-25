@@ -11,10 +11,10 @@ const IllustrationFeaturesTab2 = () => {
       className="illustrationFeaturesTab2"
     >
       <defs>
-        <rect id="a" width="350" height="346" rx="8"></rect>
-        <rect id="d" width="200" height="255" rx="8"></rect>
+        <rect id="tab2" width="350" height="346" rx="8"></rect>
+        <rect id="tab2-d" width="200" height="255" rx="8"></rect>
         <filter
-          id="c"
+          id="tab2-c"
           width="117.5%"
           height="113.7%"
           x="-8.8%"
@@ -37,7 +37,7 @@ const IllustrationFeaturesTab2 = () => {
           ></feColorMatrix>
         </filter>
         <filter
-          id="e"
+          id="tab2-e"
           width="139.5%"
           height="131%"
           x="-19.8%"
@@ -64,9 +64,9 @@ const IllustrationFeaturesTab2 = () => {
             <feMergeNode in="SourceGraphic"></feMergeNode>
           </feMerge>
         </filter>
-        <rect id="g" width="200" height="255" rx="8"></rect>
+        <rect id="tab2-g" width="200" height="255" rx="8"></rect>
         <filter
-          id="f"
+          id="tab2-f"
           width="117.5%"
           height="113.7%"
           x="-8.8%"
@@ -90,11 +90,11 @@ const IllustrationFeaturesTab2 = () => {
         </filter>
       </defs>
       <g fill="none" fillRule="evenodd">
-        <mask id="b" fill="#fff">
-          <use xlinkHref="#a"></use>
+        <mask id="tab2-b" fill="#fff">
+          <use xlinkHref="#tab2"></use>
         </mask>
-        <use fill="#E8EAF6" fillRule="nonzero" xlinkHref="#a"></use>
-        <g mask="url(#b)">
+        <use fill="#E8EAF6" fillRule="nonzero" xlinkHref="#tab2"></use>
+        <g mask="url(#tab2-b)">
           <path fill="#242A45" d="M-3.53.197h547v59h-547z"></path>
           <g fill="#FFF" transform="translate(22.47 14.197)">
             <circle cx="16" cy="16" r="16" opacity="0.245"></circle>
@@ -105,8 +105,8 @@ const IllustrationFeaturesTab2 = () => {
           </g>
         </g>
         <g transform="translate(27 138)">
-          <use fill="#000" filter="url(#c)" xlinkHref="#d"></use>
-          <use fill="#FFF" xlinkHref="#d"></use>
+          <use fill="#000" filter="url(#tab2-c)" xlinkHref="#tab2-d"></use>
+          <use fill="#FFF" xlinkHref="#tab2-d"></use>
           <g transform="translate(23 29)">
             <rect
               width="101.317"
@@ -192,9 +192,9 @@ const IllustrationFeaturesTab2 = () => {
             </g>
           </g>
         </g>
-        <g filter="url(#e)" transform="translate(251 138)">
-          <use fill="#000" filter="url(#f)" xlinkHref="#g"></use>
-          <use fill="#FFF" xlinkHref="#g"></use>
+        <g filter="url(#tab2-e)" transform="translate(251 138)">
+          <use fill="#000" filter="url(#tab2-f)" xlinkHref="#tab2-g"></use>
+          <use fill="#FFF" xlinkHref="#tab2-g"></use>
           <g transform="translate(23 29)">
             <rect
               width="101.317"

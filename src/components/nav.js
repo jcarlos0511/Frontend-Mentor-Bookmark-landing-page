@@ -10,7 +10,6 @@ import { theme } from "../styles";
 const { colors } = theme;
 
 const StyledContainer = styled.div`
-  border: 1px solid red;
   position: relative;
   padding: 2.2em 8%;
 
@@ -20,14 +19,12 @@ const StyledContainer = styled.div`
 `;
 
 const StyledMenu = styled.div`
-  border: 1px green solid;
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
 const StyledMenuActive = styled.ul`
-  border: 1px solid green;
   position: fixed;
   top: 0;
   left: 0;
