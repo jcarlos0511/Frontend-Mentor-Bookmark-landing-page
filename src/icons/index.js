@@ -4,6 +4,9 @@ import IconHamburger from "./iconHamburger";
 import IconClose from "./iconClose";
 import IconFacebook from "./iconFacebook";
 import IconTwitter from "./iconTwitter";
+import LogoChrome from "./logoChrome";
+import LogoFirefox from "./logoFirefox";
+import LogoOpera from "./logoOpera";
 
 export {
   LogoBookmark,
@@ -12,4 +15,7 @@ export {
   IconClose,
   IconFacebook,
   IconTwitter,
+  LogoChrome,
+  LogoFirefox,
+  LogoOpera,
 };

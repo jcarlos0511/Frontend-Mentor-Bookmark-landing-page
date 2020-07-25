@@ -1,16 +1,17 @@
 import theme from "./theme";
 import GlobalStyles from "./GlobalStyles";
-import Button from "./button";
-import BgImageRight from "./bgImageRight";
-
 import FormattedImages from "./formattedImages";
+import Button from "./button";
 import BgImageLeft from "./bgImageLeft";
+import BgImageRight from "./bgImageRight";
+import BgDots from "./bgDots";
 
 export {
   theme,
   GlobalStyles,
-  Button,
-  BgImageRight,
-  BgImageLeft,
   FormattedImages,
+  Button,
+  BgImageLeft,
+  BgImageRight,
+  BgDots,
 };

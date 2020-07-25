@@ -19,6 +19,7 @@ const theme = {
     sm: "0.83em",
     md: "0.91em",
     lg: "18px",
+    ml: "1.11em",
     xl: "1.33em",
     xxl: "1.55em",
     xxxl: "1.66em",

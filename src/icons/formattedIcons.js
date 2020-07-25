@@ -5,6 +5,9 @@ import {
   IconClose,
   IconFacebook,
   IconTwitter,
+  LogoChrome,
+  LogoFirefox,
+  LogoOpera,
 } from ".";
 
 const FormattedIcons = ({ name }) => {
@@ -24,6 +27,14 @@ const FormattedIcons = ({ name }) => {
     case "IconTwitter":
       return <IconTwitter />;
 
+    case "LogoChrome":
+      return <LogoChrome />;
+
+    case "LogoFirefox":
+      return <LogoFirefox />;
+
+    case "LogoOpera":
+      return <LogoOpera />;
     default:
       return null;
   }

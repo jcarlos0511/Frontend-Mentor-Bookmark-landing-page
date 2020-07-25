@@ -40,7 +40,6 @@ const StyledDescription = styled.p`
 `;
 
 const StyledButtons = styled.div`
-  /* border: solid 1px red; */
   display: flex;
   justify-content: space-between;
   margin: 0 8%;

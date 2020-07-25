@@ -5,7 +5,7 @@ import { theme } from ".";
 const { colors, fontSizes } = theme;
 
 const StyledButton = styled.button`
-  width: 10em;
+  width: auto;
   border-radius: 5px;
   padding: 0.9em;
   background: ${(props) =>

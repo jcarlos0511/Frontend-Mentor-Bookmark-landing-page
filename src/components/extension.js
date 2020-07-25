@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 
-import styled from "styled-components";
-import { theme } from "../styles";
 import BookmarkContext from "../context/bookmarkContext";
 import { Cards } from ".";
+
+import styled from "styled-components";
+import { theme } from "../styles";
 
 const { fontSizes } = theme;
 
@@ -23,6 +24,12 @@ const StyledDescription = styled.p`
   line-height: 1.65em;
 `;
 
+const StyledGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2.5em;
+`;
+
 const Extension = () => {
   const { data } = useContext(BookmarkContext);
   const { sections } = data;
@@ -35,9 +42,11 @@ const Extension = () => {
       <StyledTitle>{title}</StyledTitle>
       <StyledDescription>{description}</StyledDescription>
 
-      {browsers.map((browser, index) => (
-        <Cards key={index} browser={browser} />
-      ))}
+      <StyledGrid>
+        {browsers.map((browser, index) => (
+          <Cards key={index} browser={browser} />
+        ))}
+      </StyledGrid>
     </StyledContainer>
   );
 };
