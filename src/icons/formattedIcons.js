@@ -8,6 +8,7 @@ import {
   LogoChrome,
   LogoFirefox,
   LogoOpera,
+  IconArrow,
 } from ".";
 
 const FormattedIcons = ({ name }) => {
@@ -35,6 +36,10 @@ const FormattedIcons = ({ name }) => {
 
     case "LogoOpera":
       return <LogoOpera />;
+
+    case "IconArrow":
+      return <IconArrow />;
+
     default:
       return null;
   }

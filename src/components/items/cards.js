@@ -7,6 +7,7 @@ import { FormattedIcons } from "../../icons";
 const { colors, fontSizes } = theme;
 
 const StyledContainer = styled.div`
+  background-color: ${colors.white};
   border-radius: 16px;
   padding-top: 3em;
   padding-bottom: 1.5em;

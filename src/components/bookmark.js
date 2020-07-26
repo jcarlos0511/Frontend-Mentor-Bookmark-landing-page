@@ -1,6 +1,6 @@
 import React from "react";
 import BookmarkState from "../context/bookmarkState";
-import { Nav, Hero, Features, Extension } from ".";
+import { Nav, Hero, Features, Extension, Faq } from ".";
 
 const Bookmark = () => {
   return (
@@ -9,6 +9,7 @@ const Bookmark = () => {
       <Hero />
       <Features />
       <Extension />
+      <Faq />
     </BookmarkState>
   );
 };

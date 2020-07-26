@@ -12,7 +12,7 @@ const IllustrationHero = () => {
     >
       <defs>
         <filter
-          id="a"
+          id="hero-a"
           width="118%"
           height="126.9%"
           x="-9%"
@@ -39,9 +39,9 @@ const IllustrationHero = () => {
             <feMergeNode in="SourceGraphic"></feMergeNode>
           </feMerge>
         </filter>
-        <rect id="c" width="578" height="385" rx="26"></rect>
+        <rect id="hero-c" width="578" height="385" rx="26"></rect>
         <filter
-          id="b"
+          id="hero-b"
           width="126%"
           height="139%"
           x="-13%"
@@ -64,7 +64,7 @@ const IllustrationHero = () => {
           ></feColorMatrix>
         </filter>
         <linearGradient
-          id="d"
+          id="hero-d"
           x1="99.013%"
           x2="2.544%"
           y1="71.675%"
@@ -73,25 +73,25 @@ const IllustrationHero = () => {
           <stop offset="0%" stopColor="#151515"></stop>
           <stop offset="100%" stopColor="#3D3D3D"></stop>
         </linearGradient>
-        <rect id="e" width="536" height="346" y="3" rx="8"></rect>
+        <rect id="hero-e" width="536" height="346" y="3" rx="8"></rect>
       </defs>
       <g
         fill="none"
         fillRule="evenodd"
-        filter="url(#a)"
+        filter="url(#hero-a)"
         transform="translate(39 9)"
       >
         <g transform="translate(.5 .5)">
           <g fillRule="nonzero">
-            <use fill="#000" filter="url(#b)" xlinkHref="#c"></use>
-            <use fill="#777" xlinkHref="#c"></use>
+            <use fill="#000" filter="url(#hero-b)" xlinkHref="#hero-c"></use>
+            <use fill="#777" xlinkHref="#hero-c"></use>
           </g>
           <rect
             width="574.23"
             height="381.865"
             x="2"
             y="2"
-            fill="url(#d)"
+            fill="url(#hero-d)"
             fillRule="nonzero"
             rx="25"
           ></rect>
@@ -105,11 +105,11 @@ const IllustrationHero = () => {
               opacity="0.1"
               rx="5"
             ></rect>
-            <mask id="f" fill="#fff">
-              <use xlinkHref="#e"></use>
+            <mask id="hero-f" fill="#fff">
+              <use xlinkHref="#hero-e"></use>
             </mask>
-            <use fill="#E8EAF6" fillRule="nonzero" xlinkHref="#e"></use>
-            <g mask="url(#f)">
+            <use fill="#E8EAF6" fillRule="nonzero" xlinkHref="#hero-e"></use>
+            <g mask="url(#hero-f)">
               <path fill="#5267DF" d="M-3.53 3.197h547v59h-547z"></path>
               <g fill="#FFF" transform="translate(22.47 17.197)">
                 <circle cx="16" cy="16" r="16" opacity="0.245"></circle>
@@ -126,7 +126,7 @@ const IllustrationHero = () => {
                 </g>
               </g>
             </g>
-            <g mask="url(#f)">
+            <g mask="url(#hero-f)">
               <g transform="translate(57 96)">
                 <rect width="261" height="316" fill="#FFF" rx="8"></rect>
                 <rect

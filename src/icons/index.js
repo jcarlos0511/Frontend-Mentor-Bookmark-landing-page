@@ -7,6 +7,7 @@ import IconTwitter from "./iconTwitter";
 import LogoChrome from "./logoChrome";
 import LogoFirefox from "./logoFirefox";
 import LogoOpera from "./logoOpera";
+import IconArrow from "./iconArrow";
 
 export {
   LogoBookmark,
@@ -18,4 +19,5 @@ export {
   LogoChrome,
   LogoFirefox,
   LogoOpera,
+  IconArrow,
 };

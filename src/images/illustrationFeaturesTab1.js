@@ -14,11 +14,11 @@ const IllustrationFeaturesTab1 = () => {
         <rect id="tab1" width="536" height="346" rx="8"></rect>
       </defs>
       <g fill="none" fillRule="evenodd">
-        <mask id="tab1b" fill="#fff">
+        <mask id="tab1-b" fill="#fff">
           <use xlinkHref="#tab1"></use>
         </mask>
         <use fill="#E8EAF6" fillRule="nonzero" xlinkHref="#tab1"></use>
-        <g mask="url(#tab1b)">
+        <g mask="url(#tab1-b)">
           <path fill="#242A45" d="M-3.53.197h547v59h-547z"></path>
           <g fill="#FFF" transform="translate(22.47 14.197)">
             <circle cx="16" cy="16" r="16" opacity="0.245"></circle>
@@ -29,7 +29,7 @@ const IllustrationFeaturesTab1 = () => {
             </g>
           </g>
         </g>
-        <g mask="url(#tab1b)">
+        <g mask="url(#tab1-b)">
           <g transform="translate(57 93)">
             <rect width="261" height="316" fill="#FFF" rx="8"></rect>
             <rect width="128" height="316" x="295" fill="#FFF" rx="8"></rect>

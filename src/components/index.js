@@ -6,6 +6,8 @@ import FeaturesItems from "./items/featuresItems";
 import TabItems from "./items/tabItems";
 import Extension from "./extension";
 import Cards from "./items/cards";
+import Faq from "./faq";
+import FaqItems from "./items/faqItems";
 
 export {
   Bookmark,
@@ -16,4 +18,6 @@ export {
   TabItems,
   Extension,
   Cards,
+  Faq,
+  FaqItems,
 };
