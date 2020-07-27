@@ -47,14 +47,14 @@ const FaqItems = ({ acc, iconArrow, state }) => {
           <FormattedIcons
             name={iconArrow}
             color={colors.softRed}
-            transform={"rotate(180deg)"}
+            rotate={"rotate(180deg)"}
             transition={"transform .3s ease"}
           />
         ) : (
           <FormattedIcons
             color={colors.softBlue}
             name={iconArrow}
-            transform={"rotate(0deg)"}
+            rotate={"rotate(0deg)"}
             transition={"transform .3s ease"}
           />
         )}

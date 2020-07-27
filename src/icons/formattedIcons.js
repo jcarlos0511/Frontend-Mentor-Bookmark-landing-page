@@ -11,7 +11,7 @@ import {
   IconArrow,
 } from ".";
 
-const FormattedIcons = ({ name, color, transform, transition }) => {
+const FormattedIcons = ({ name, color, rotate, transition }) => {
   switch (name) {
     case "LogoBookmark":
       return <LogoBookmark />;
@@ -39,11 +39,7 @@ const FormattedIcons = ({ name, color, transform, transition }) => {
 
     case "IconArrow":
       return (
-        <IconArrow
-          color={color}
-          transform={transform}
-          transition={transition}
-        />
+        <IconArrow color={color} rotate={rotate} transition={transition} />
       );
 
     default:
