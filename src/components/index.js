@@ -8,6 +8,7 @@ import Extension from "./extension";
 import Cards from "./items/cards";
 import Faq from "./faq";
 import FaqItems from "./items/faqItems";
+import Contact from "./contact";
 
 export {
   Bookmark,
@@ -20,4 +21,5 @@ export {
   Cards,
   Faq,
   FaqItems,
+  Contact,
 };

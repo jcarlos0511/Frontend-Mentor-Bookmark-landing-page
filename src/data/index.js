@@ -108,7 +108,10 @@ export const data = {
           },
         ],
       },
-      contact: {},
+      contact: {
+        tinyTitle: "35,000+ already joined",
+        title: "Stay up-to-date with what we’re doing",
+      },
       footer: {},
     },
     utils: {

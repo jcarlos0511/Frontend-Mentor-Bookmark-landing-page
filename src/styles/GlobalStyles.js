@@ -79,6 +79,23 @@ const GlobalStyles = createGlobalStyle`
         position: relative;
       }
   }
+
+  input, textarea {
+    border: 0;
+    outline: 0;
+
+    &:focus {
+      outline: 0;
+    }
+    &::placeholder {
+    }
+    &:focus,
+    &:active {
+      &::placeholder {
+        opacity: 0.5;
+      }
+    }
+  }
 `;
 
 export default GlobalStyles;
