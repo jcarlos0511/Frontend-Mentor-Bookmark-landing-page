@@ -13,7 +13,7 @@ const StyledContainer = styled.div`
   padding-bottom: 1.5em;
   margin: 0 auto;
   width: 300px;
-  box-shadow: 0px 10px 20px ${colors.lightGrayishBlue};
+  box-shadow: 0px 10px 10px -3px ${colors.lightGrayishBlue};
 
   & .BgDots {
     margin: 1.25em auto;

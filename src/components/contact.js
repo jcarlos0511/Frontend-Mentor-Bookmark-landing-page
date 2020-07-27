@@ -9,9 +9,13 @@ const { colors, fontSizes } = theme;
 const StyledContainer = styled.div`
   background-color: ${colors.softBlue};
 
-  & input {
-    padding: 0.9em;
+  & .email {
+    padding: 0.9em 1.5em;
     border-radius: 5px;
+
+    &::-webkit-input-placeholder {
+      color: ${colors.lightGrayishBlue};
+    }
   }
 `;
 
@@ -42,6 +46,7 @@ const StyledForm = styled.form`
   flex-direction: column;
   justify-content: space-between;
   height: 6em;
+  margin: 2em auto;
 `;
 
 const Contact = () => {
@@ -59,7 +64,14 @@ const Contact = () => {
         <StyledTitle>{title}</StyledTitle>
 
         <StyledForm>
-          <input type="text" name="" id="" />
+          {/* first create a pseduoelement :after ... */}
+          <input
+            className="email"
+            placeholder="Enter your email address"
+            type="email"
+            name=""
+            id=""
+          />
 
           <Button
             background={colors.softRed}

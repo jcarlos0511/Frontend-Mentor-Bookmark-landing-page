@@ -62,6 +62,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
    button {
+     --webkit-appearance: none;
     cursor: pointer;
     border: 0;
     border-radius: 0;
