@@ -1,35 +1,67 @@
-import React, { useState, useRef } from "react";
+import React from "react";
+
 import { FormattedIcons } from "../../icons";
 import styled from "styled-components";
 
-const StyledAnswer = styled.p`
-  border: 1px solid red;
+import { theme } from "../../styles";
+const { colors, fontSizes } = theme;
+
+const StyledContainer = styled.li`
+  user-select: none;
+  font-size: ${fontSizes.sm};
+  text-align: left;
+  line-height: 2em;
+  border-bottom: 1px solid ${colors.lightGrayishBlue};
 `;
-const FaqItems = ({ acc, iconArrow }) => {
+
+const StyledContent = styled.label`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const StyledQuestion = styled.p`
+  color: ${colors.veryDarkBlue};
+  font-weight: 400;
+
+  &:hover {
+    color: ${colors.softRed};
+  }
+`;
+
+const StyledAnswer = styled.p`
+  padding-bottom: 1em;
+  color: ${colors.veryGrayishBlue};
+`;
+
+const FaqItems = ({ acc, iconArrow, state }) => {
   const { id, question, answer } = acc;
 
-  const [state, setState] = useState({ acc: "" });
-  const ref = useRef(false);
-  console.log(ref.current.checked);
   return (
-    <li>
-      <input
-        type="radio"
-        name="acc"
-        id={id}
-        value={id}
-        onChange={(e) =>
-          setState({ ...state, [e.target.name]: e.target.value })
-        }
-        ref={ref}
-        checked={state.acc === id}
-      />
-      <p>{question}</p>
-      <label htmlFor={id}>
-        <FormattedIcons name={iconArrow} />
-      </label>
+    <StyledContainer>
+      <StyledContent htmlFor={id}>
+        <StyledQuestion>{question}</StyledQuestion>
+
+        {state.acc === id ? (
+          <FormattedIcons
+            name={iconArrow}
+            color={colors.softRed}
+            transform={"rotate(180deg)"}
+            transition={"transform .3s ease"}
+          />
+        ) : (
+          <FormattedIcons
+            color={colors.softBlue}
+            name={iconArrow}
+            transform={"rotate(0deg)"}
+            transition={"transform .3s ease"}
+          />
+        )}
+      </StyledContent>
+
       {state.acc === id ? <StyledAnswer>{answer}</StyledAnswer> : null}
-    </li>
+    </StyledContainer>
   );
 };
 

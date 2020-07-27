@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import BookmarkContext from "../context/bookmarkContext";
 
 import styled from "styled-components";
@@ -11,6 +11,10 @@ const StyledContainer = styled.div`
   margin: 0 8%;
   padding: 2.2em 0;
   text-align: center;
+
+  & .acc {
+    display: none;
+  }
 `;
 
 const StyledTitle = styled.h2`
@@ -33,15 +37,31 @@ const Faq = () => {
 
   const { title, description, accordion } = faq;
 
+  const [state, setState] = useState({ acc: "" });
+
   return (
     <StyledContainer>
       <StyledTitle>{title}</StyledTitle>
 
       <StyledDescription>{description}</StyledDescription>
 
+      {accordion.map(({ id }, i) => (
+        <input
+          key={i}
+          type="radio"
+          className="acc"
+          name="acc"
+          id={id}
+          value={id}
+          onChange={(e) =>
+            setState({ ...state, [e.target.name]: e.target.value })
+          }
+        />
+      ))}
+
       <ul>
         {accordion.map((acc, i) => (
-          <FaqItems key={i} acc={acc} iconArrow={iconArrow} />
+          <FaqItems key={i} acc={acc} iconArrow={iconArrow} state={state} />
         ))}
       </ul>
     </StyledContainer>
