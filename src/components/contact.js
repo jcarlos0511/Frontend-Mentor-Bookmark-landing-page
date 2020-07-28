@@ -1,8 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef } from "react";
 import BookmarkContext from "../context/bookmarkContext";
 
 import styled from "styled-components";
 import { theme, Button } from "../styles";
+import { FormattedIcons } from "../icons";
 
 const { colors, fontSizes } = theme;
 
@@ -12,12 +13,6 @@ const StyledContainer = styled.div`
   & .email {
     padding: 0.9em 1.5em;
     border-radius: 5px;
-
-    &:active,
-    &:focus {
-      border: 1px solid;
-      border-color: ${(props) => props.isactive};
-    }
 
     & + span {
       font-size: ${fontSizes.xs};
@@ -37,6 +32,21 @@ const StyledContainer = styled.div`
     &::-webkit-input-placeholder {
       color: ${colors.lightGrayishBlue};
     }
+  }
+
+  & .isActive:active,
+  & .isActive:focus {
+    border: 3px solid;
+    border-color: ${colors.softRed};
+  }
+
+  & .icon {
+    display: none;
+    position: relative;
+  }
+
+  & .error {
+    display: block;
   }
 `;
 
@@ -72,7 +82,7 @@ const StyledForm = styled.form`
 
 const Contact = () => {
   const { data } = useContext(BookmarkContext);
-  const { sections } = data;
+  const { sections, utils } = data;
 
   const { contact } = sections;
   const { tinyTitle, title } = contact;
@@ -83,6 +93,17 @@ const Contact = () => {
     name: "",
   });
 
+  const ref = useRef(null);
+
+  // focus input
+  const focus = () => ref.current.focus();
+
+  //Hide error
+  const hideError = () =>
+    setTimeout(() => {
+      setErrors({ ...errors, name: "" });
+    }, 5000);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -90,6 +111,10 @@ const Contact = () => {
 
     if (email.email === "") {
       setErrors({ ...errors, name: "Whoops, empty field" });
+
+      focus();
+
+      hideError();
       return;
     }
 
@@ -98,6 +123,10 @@ const Contact = () => {
         ...errors,
         name: "Whoops, must be at least 8 characters or more",
       });
+
+      focus();
+
+      hideError();
 
       return;
     }
@@ -116,17 +145,22 @@ const Contact = () => {
 
         <StyledForm onSubmit={handleSubmit}>
           <input
-            className="email"
-            placeholder="Enter your email address"
+            ref={ref}
             type="email"
             name="email"
+            placeholder="Enter your email address"
             value={email.email}
+            className={`email ${errors.name !== "" && "isActive"}`}
             onChange={(e) =>
               setEmail({ ...email, [e.target.name]: e.target.value })
             }
           />
 
           {errors.name !== "" && <span>{errors.name}</span>}
+
+          <i className={`icon ${errors.name !== "" && "error"}`}>
+            <FormattedIcons name={utils.iconError} />
+          </i>
 
           <Button
             background={colors.softRed}

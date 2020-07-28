@@ -9,6 +9,7 @@ import {
   LogoFirefox,
   LogoOpera,
   IconArrow,
+  IconError,
 } from ".";
 
 const FormattedIcons = ({ name, color, rotate, transition }) => {
@@ -41,6 +42,9 @@ const FormattedIcons = ({ name, color, rotate, transition }) => {
       return (
         <IconArrow color={color} rotate={rotate} transition={transition} />
       );
+
+    case "IconError":
+      return <IconError />;
 
     default:
       return null;

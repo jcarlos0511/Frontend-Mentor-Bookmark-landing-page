@@ -122,6 +122,7 @@ export const data = {
       iconTwitter: "IconTwitter",
       illustrationHero: "IllustrationHero",
       iconArrow: "IconArrow",
+      iconError: "IconError",
     },
   },
 };
