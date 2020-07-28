@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import BookmarkContext from "../context/bookmarkContext";
 
 import styled from "styled-components";
@@ -12,6 +12,27 @@ const StyledContainer = styled.div`
   & .email {
     padding: 0.9em 1.5em;
     border-radius: 5px;
+
+    &:active,
+    &:focus {
+      border: 1px solid;
+      border-color: ${(props) => props.isactive};
+    }
+
+    & + span {
+      font-size: ${fontSizes.xs};
+      font-style: italic;
+      text-align: left;
+      color: ${colors.white};
+      width: auto;
+      background-color: ${colors.softRed};
+      display: block;
+      margin-top: -3px;
+      margin-bottom: 2em;
+      padding: 0.35em 1em;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
 
     &::-webkit-input-placeholder {
       color: ${colors.lightGrayishBlue};
@@ -45,8 +66,8 @@ const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 6em;
   margin: 2em auto;
+  height: 6em;
 `;
 
 const Contact = () => {
@@ -56,6 +77,36 @@ const Contact = () => {
   const { contact } = sections;
   const { tinyTitle, title } = contact;
 
+  const [email, setEmail] = useState({ email: "" });
+
+  const [errors, setErrors] = useState({
+    name: "",
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // validations
+
+    if (email.email === "") {
+      setErrors({ ...errors, name: "Whoops, empty field" });
+      return;
+    }
+
+    if (email.email.length < 8) {
+      setErrors({
+        ...errors,
+        name: "Whoops, must be at least 8 characters or more",
+      });
+
+      return;
+    }
+
+    setErrors({ ...errors, name: "" });
+    setEmail({ email: "" });
+    alert("Sending");
+  };
+
   return (
     <StyledContainer>
       <StyledContent>
@@ -63,15 +114,19 @@ const Contact = () => {
 
         <StyledTitle>{title}</StyledTitle>
 
-        <StyledForm>
-          {/* first create a pseduoelement :after ... */}
+        <StyledForm onSubmit={handleSubmit}>
           <input
             className="email"
             placeholder="Enter your email address"
             type="email"
-            name=""
-            id=""
+            name="email"
+            value={email.email}
+            onChange={(e) =>
+              setEmail({ ...email, [e.target.name]: e.target.value })
+            }
           />
+
+          {errors.name !== "" && <span>{errors.name}</span>}
 
           <Button
             background={colors.softRed}
