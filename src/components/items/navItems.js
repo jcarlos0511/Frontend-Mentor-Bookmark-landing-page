@@ -12,6 +12,7 @@ const NavItem = styled.li`
   border-top: 1px solid ${colors.grayishBlue};
   text-align: center;
   font-size: ${fontSizes.sm};
+  letter-spacing: 0.15em;
 
   &:last-of-type a {
     border: 2px solid ${colors.white};

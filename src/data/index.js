@@ -4,16 +4,16 @@ export const data = {
       nav: {
         items: [
           {
-            name: "Features",
+            name: "features",
           },
           {
-            name: "Pricing",
+            name: "pricing",
           },
           {
-            name: "Contact",
+            name: "contact",
           },
           {
-            name: "Login",
+            name: "login",
           },
         ],
       },
@@ -112,7 +112,19 @@ export const data = {
         tinyTitle: "35,000+ already joined",
         title: "Stay up-to-date with what we’re doing",
       },
-      footer: {},
+      footer: {
+        items: [
+          {
+            name: "features",
+          },
+          {
+            name: "pricing",
+          },
+          {
+            name: "contact",
+          },
+        ],
+      },
     },
     utils: {
       logoBookmark: "LogoBookmark",

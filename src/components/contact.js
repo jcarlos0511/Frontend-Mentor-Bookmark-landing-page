@@ -99,6 +99,8 @@ const Contact = () => {
 
   const ref = useRef(null);
 
+  const regExp = new RegExp(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i);
+
   // focus input
   const focus = () => ref.current.focus();
 
@@ -121,9 +123,7 @@ const Contact = () => {
 
       focus();
 
-      hideError();
-
-      return;
+      return hideError();
     }
 
     if (email.email.length < 8) {
@@ -134,16 +134,25 @@ const Contact = () => {
 
       focus();
 
-      hideError();
+      return hideError();
+    }
 
-      return;
+    if (!regExp.test(email.email)) {
+      setErrors({
+        ...errors,
+        name: "Whoops, make sure it's an email",
+      });
+
+      focus();
+
+      return hideError();
     }
 
     setErrors({ ...errors, name: "" });
 
-    setEmail({ email: "" });
+    alert(`Sending to ${email.email}`);
 
-    alert("Sending");
+    setEmail({ email: "" });
   };
 
   return (
@@ -153,7 +162,7 @@ const Contact = () => {
 
         <StyledTitle>{title}</StyledTitle>
 
-        <StyledForm onSubmit={handleSubmit}>
+        <StyledForm onSubmit={handleSubmit} noValidate>
           <input
             ref={ref}
             type="email"

@@ -9,6 +9,8 @@ import Cards from "./items/cards";
 import Faq from "./faq";
 import FaqItems from "./items/faqItems";
 import Contact from "./contact";
+import Footer from "./footer";
+import FooterItems from "./items/footerItems";
 
 export {
   Bookmark,
@@ -22,4 +24,6 @@ export {
   Faq,
   FaqItems,
   Contact,
+  Footer,
+  FooterItems,
 };
