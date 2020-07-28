@@ -47,6 +47,9 @@ const StyledContainer = styled.div`
 
   & .error {
     display: block;
+    position: absolute;
+    top: 0.65em;
+    right: 1em;
   }
 `;
 
@@ -73,6 +76,7 @@ const StyledTitle = styled.h2`
 `;
 
 const StyledForm = styled.form`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -104,6 +108,9 @@ const Contact = () => {
       setErrors({ ...errors, name: "" });
     }, 5000);
 
+  const handleChange = (e) =>
+    setEmail({ ...email, [e.target.name]: e.target.value });
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -115,6 +122,7 @@ const Contact = () => {
       focus();
 
       hideError();
+
       return;
     }
 
@@ -132,7 +140,9 @@ const Contact = () => {
     }
 
     setErrors({ ...errors, name: "" });
+
     setEmail({ email: "" });
+
     alert("Sending");
   };
 
@@ -151,9 +161,7 @@ const Contact = () => {
             placeholder="Enter your email address"
             value={email.email}
             className={`email ${errors.name !== "" && "isActive"}`}
-            onChange={(e) =>
-              setEmail({ ...email, [e.target.name]: e.target.value })
-            }
+            onChange={handleChange}
           />
 
           {errors.name !== "" && <span>{errors.name}</span>}

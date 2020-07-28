@@ -43,6 +43,17 @@ const Faq = () => {
 
   const [state, setState] = useState({ acc: "" });
 
+  const hideState = () => {
+    setTimeout(() => {
+      setState({ acc: "" });
+    }, 15000);
+  };
+
+  const handleChange = (e) => {
+    setState({ ...state, [e.target.name]: e.target.value });
+
+    hideState();
+  };
   return (
     <StyledContainer>
       <StyledTitle>{title}</StyledTitle>
@@ -57,9 +68,7 @@ const Faq = () => {
           name="acc"
           id={id}
           value={id}
-          onChange={(e) =>
-            setState({ ...state, [e.target.name]: e.target.value })
-          }
+          onChange={handleChange}
         />
       ))}
 
