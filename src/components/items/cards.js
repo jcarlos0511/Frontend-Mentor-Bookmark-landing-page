@@ -43,7 +43,11 @@ const Cards = ({ browser }) => {
 
       <BgDots />
 
-      <Button background={colors.softBlue} title="Add & Install Extension" />
+      <Button
+        background={colors.softBlue}
+        border={colors.softBlue}
+        title="Add & Install Extension"
+      />
     </StyledContainer>
   );
 };

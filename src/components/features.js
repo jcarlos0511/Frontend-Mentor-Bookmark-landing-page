@@ -94,7 +94,7 @@ const Features = () => {
     setState({ ...state, [e.target.name]: e.target.value });
 
   return (
-    <StyledContainer>
+    <StyledContainer id="features">
       <StyledTitle>{title}</StyledTitle>
 
       <StyledDescription>{description}</StyledDescription>

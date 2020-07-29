@@ -10,8 +10,13 @@ const StyledButton = styled.button`
   padding: 0.9em;
   font-size: ${fontSizes.sm};
   font-weight: 600;
+  text-decoration: none;
 
-  background: ${(props) =>
+  border: 2px solid;
+
+  border-color: ${(props) => (props.border ? props.border : colors.white)};
+
+  background-color: ${(props) =>
     props.background ? props.background : colors.white};
 
   color: ${(props) =>
@@ -19,11 +24,24 @@ const StyledButton = styled.button`
 
   box-shadow: ${(props) =>
     props.bShadow ? props.bShadow : `0 5px 10px ${colors.lightGrayishBlue}`};
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: ${colors.white};
+    border: 2px solid;
+    border-color: ${(props) =>
+      props.border ? props.border : colors.veryGrayishBlue};
+
+    color: ${(props) => (props.border ? props.border : colors.veryGrayishBlue)};
+
+    transition: all 0.3s ease;
+  }
 `;
 
-const Button = ({ background, title, bShadow }) => {
+const Button = ({ background, border, bShadow, title }) => {
   return (
-    <StyledButton bShadow={bShadow} background={background}>
+    <StyledButton bShadow={bShadow} background={background} border={border}>
       {title}
     </StyledButton>
   );

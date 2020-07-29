@@ -11,7 +11,7 @@ const StyledContainer = styled.div`
   background-color: ${colors.softBlue};
 
   & .email {
-    padding: 0.9em 1.5em;
+    padding: 1.2em 1.5em;
     border-radius: 5px;
 
     & + span {
@@ -36,7 +36,7 @@ const StyledContainer = styled.div`
 
   & .isActive:active,
   & .isActive:focus {
-    border: 3px solid;
+    border: 2px solid;
     border-color: ${colors.softRed};
   }
 
@@ -81,7 +81,7 @@ const StyledForm = styled.form`
   flex-direction: column;
   justify-content: space-between;
   margin: 2em auto;
-  height: 6em;
+  height: 7em;
 `;
 
 const Contact = () => {
@@ -156,7 +156,7 @@ const Contact = () => {
   };
 
   return (
-    <StyledContainer>
+    <StyledContainer id="contact">
       <StyledContent>
         <StyledTinyTitle>{tinyTitle}</StyledTinyTitle>
 
@@ -182,6 +182,7 @@ const Contact = () => {
           <Button
             background={colors.softRed}
             bShadow="none"
+            border={colors.softRed}
             title="Contact Us"
           />
         </StyledForm>

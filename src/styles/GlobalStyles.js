@@ -68,7 +68,7 @@ const GlobalStyles = createGlobalStyle`
     border-radius: 0;
     &:focus,
     &:active {
-      outline-color: ${colors.softBlue};
+      outline: none;
     }
   }
 

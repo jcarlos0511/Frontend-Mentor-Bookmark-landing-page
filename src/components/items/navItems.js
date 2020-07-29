@@ -20,14 +20,20 @@ const NavItem = styled.li`
     padding: 0.833em 0;
     border-radius: 6px;
   }
+
+  & a:hover {
+    color: ${colors.softRed};
+  }
 `;
 
-const NavItems = ({ item }) => {
+const NavItems = ({ item, SetMenu }) => {
   return (
     <NavItem>
-      <a href="http://" target="_blank" rel="noopener noreferrer">
-        {item.name}
-      </a>
+      <label htmlFor="hamburger">
+        <a href={`#${item.name}`} rel="noopener noreferrer">
+          {item.name}
+        </a>
+      </label>
     </NavItem>
   );
 };

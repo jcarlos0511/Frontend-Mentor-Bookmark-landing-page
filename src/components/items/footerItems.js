@@ -11,10 +11,20 @@ const StyledItem = styled.li`
   padding: 1.4em 0;
   font-size: ${fontSizes.sm};
   letter-spacing: 0.15em;
+
+  & a:hover {
+    color: ${colors.softRed};
+  }
 `;
 
 const FooterItems = ({ item }) => {
-  return <StyledItem>{item.name}</StyledItem>;
+  return (
+    <StyledItem>
+      <a href={`#${item.name}`} rel="noopener noreferrer">
+        {item.name}
+      </a>
+    </StyledItem>
+  );
 };
 
 export default FooterItems;

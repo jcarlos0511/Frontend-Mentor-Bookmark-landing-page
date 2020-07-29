@@ -9,6 +9,7 @@ const StyledContainer = styled.div`
   padding: 2.2em 0;
   overflow-x: hidden;
   position: relative;
+  margin: 5em 0;
 `;
 
 const StyledImage = styled.div`
@@ -66,7 +67,12 @@ const Hero = () => {
       </StyledContent>
 
       <StyledButtons>
-        <Button background={colors.softBlue} title="Get it on Chrome" />
+        <Button
+          background={colors.softBlue}
+          border={colors.softBlue}
+          title="Get it on Chrome"
+        />
+
         <Button title="Get it on Firefox" />
       </StyledButtons>
     </StyledContainer>

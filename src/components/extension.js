@@ -38,7 +38,7 @@ const Extension = () => {
   const { title, description, browsers } = extension;
 
   return (
-    <StyledContainer>
+    <StyledContainer id="pricing">
       <StyledTitle>{title}</StyledTitle>
       <StyledDescription>{description}</StyledDescription>
 

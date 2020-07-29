@@ -10,8 +10,12 @@ import { theme } from "../styles";
 const { colors } = theme;
 
 const StyledContainer = styled.div`
-  position: relative;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 100%;
   padding: 2.2em 8%;
+  background-color: ${colors.white};
 
   & .hamburger {
     display: none;
@@ -106,7 +110,7 @@ const Nav = () => {
           </div>
 
           {nav.items.map((item, index) => (
-            <NavItems key={index} item={item} />
+            <NavItems key={index} item={item} SetMenu={SetMenu} />
           ))}
 
           <div className="menuFooter">

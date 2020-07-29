@@ -8,7 +8,7 @@ import { FooterItems } from ".";
 
 const { colors } = theme;
 
-const StyledContainer = styled.div`
+const StyledContainer = styled.footer`
   background-color: ${colors.veryDarkBlue};
 `;
 
@@ -30,10 +30,15 @@ const StyledList = styled.ul`
 const StyledIcons = styled.div`
   display: flex;
   justify-content: center;
+  margin: 1.5em 0;
 
-  & .iconFacebook,
-  & .iconTwitter {
+  & a .iconFacebook,
+  & a .iconTwitter {
     margin: 0 1.25em;
+
+    &:hover path {
+      fill: ${colors.softRed};
+    }
   }
 `;
 
@@ -43,10 +48,10 @@ const Footer = () => {
   const { sections, utils } = data;
 
   const { footer } = sections;
+  const { items } = footer;
 
   const { logoBookmark, iconFacebook, iconTwitter } = utils;
 
-  const { items } = footer;
   return (
     <StyledContainer>
       <StyledContent>
@@ -59,8 +64,21 @@ const Footer = () => {
         </StyledList>
 
         <StyledIcons>
-          <FormattedIcons name={iconFacebook} />
-          <FormattedIcons name={iconTwitter} />
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FormattedIcons name={iconFacebook} />
+          </a>
+
+          <a
+            href="https://twitter.com/home"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FormattedIcons name={iconTwitter} />
+          </a>
         </StyledIcons>
       </StyledContent>
     </StyledContainer>

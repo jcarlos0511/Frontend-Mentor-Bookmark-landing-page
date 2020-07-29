@@ -78,7 +78,11 @@ const Faq = () => {
         ))}
       </StyledList>
 
-      <Button background={colors.softBlue} title="More Info" />
+      <Button
+        background={colors.softBlue}
+        border={colors.softBlue}
+        title="More Info"
+      />
     </StyledContainer>
   );
 };
