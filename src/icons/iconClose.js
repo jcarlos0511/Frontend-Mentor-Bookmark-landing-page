@@ -2,7 +2,12 @@ import React from "react";
 
 const IconClose = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15">
+    <svg
+      className="IconClose"
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="15"
+    >
       <path
         fill="#FFF"
         fillRule="evenodd"

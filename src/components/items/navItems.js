@@ -14,23 +14,34 @@ const NavItem = styled.li`
   font-size: ${fontSizes.sm};
   letter-spacing: 0.15em;
   list-style: none;
+  position: relative;
 
-  &:last-of-type a {
+  &:last-of-type .link {
     border: 2px solid ${colors.white};
     width: 100%;
     padding: 0.833em 0;
     border-radius: 6px;
+
+    &:hover {
+      border: 2px solid ${colors.softRed};
+    }
   }
 
-  & a:hover {
+  & .link:hover {
     color: ${colors.softRed};
   }
 `;
 
-const NavItems = ({ item }) => {
+const NavItems = ({ item, SetMenu }) => {
   return (
     <NavItem>
-      <a href={`#${item.name}`} rel="noopener noreferrer">
+      <a
+        className="link"
+        href={`#${item.name}`}
+        rel="noopener noreferrer"
+        name={item.name}
+        onClick={() => SetMenu(false)}
+      >
         {item.name}
       </a>
     </NavItem>

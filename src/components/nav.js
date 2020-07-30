@@ -11,12 +11,12 @@ import { useScroll } from "../customHooks/useScroll";
 const { colors } = theme;
 
 const StyledContainer = styled.header`
-  border: 1px solid red;
+  /* border: 1px solid red; */
   position: fixed;
   top: 0;
   z-index: 3;
   width: 100%;
-  padding: 2.2em 8%;
+  padding: ${(props) => (props.y === 0 ? `2.2em` : ".75em")} 8%;
   background-color: ${colors.white};
   transform: translateY(
     ${(props) => (props.direction === "down" ? `-106px` : "0px")}
@@ -32,6 +32,11 @@ const StyledMenu = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  & .IconHamburger:active {
+    transform: rotate(180deg);
+    transition: all 0.5s ease;
+  }
 `;
 
 const StyledMenuActive = styled.nav`
@@ -54,6 +59,11 @@ const StyledMenuActive = styled.nav`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    & .IconClose:active {
+      transform: rotate(180deg);
+      transition: transform 0.5s ease;
+    }
   }
 
   & .logoTitle {
@@ -78,6 +88,10 @@ const StyledMenuActive = styled.nav`
 
     & svg {
       margin: 0 0.66em;
+
+      &:hover path {
+        fill: ${colors.softRed};
+      }
     }
   }
 `;
@@ -101,14 +115,14 @@ const Nav = () => {
 
   // handle scroll
 
-  const { x, y, direction } = useScroll();
+  const { y, direction } = useScroll();
 
-  console.log(x, y, direction);
+  // console.log(x, y, direction);
 
   return (
     <>
       {!menu && (
-        <StyledContainer direction={direction}>
+        <StyledContainer y={y} direction={direction}>
           <input
             type="checkbox"
             id="hamburger"
@@ -146,13 +160,27 @@ const Nav = () => {
           </div>
 
           {nav.items.map((item, index) => (
-            <NavItems key={index} item={item} menu={menu} SetMenu={SetMenu} />
+            <NavItems key={index} item={item} SetMenu={SetMenu} />
           ))}
 
           <div className="menuFooter">
-            <FormattedIcons name={iconFacebook} />
+            <a
+              href="https://www.facebook.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+              onClick={() => SetMenu(false)}
+            >
+              <FormattedIcons name={iconFacebook} />
+            </a>
 
-            <FormattedIcons name={iconTwitter} />
+            <a
+              href="https://twitter.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => SetMenu(false)}
+            >
+              <FormattedIcons name={iconTwitter} />
+            </a>
           </div>
         </StyledMenuActive>
       )}
