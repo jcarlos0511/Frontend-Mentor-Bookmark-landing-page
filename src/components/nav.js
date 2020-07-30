@@ -61,7 +61,7 @@ const StyledMenuActive = styled.nav`
     justify-content: space-between;
 
     & .IconClose:active {
-      transform: rotate(180deg);
+      transform: rotate(-180deg);
       transition: transform 0.5s ease;
     }
   }
