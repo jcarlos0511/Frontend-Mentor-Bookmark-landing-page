@@ -13,6 +13,7 @@ const NavItem = styled.li`
   text-align: center;
   font-size: ${fontSizes.sm};
   letter-spacing: 0.15em;
+  list-style: none;
 
   &:last-of-type a {
     border: 2px solid ${colors.white};
@@ -26,14 +27,12 @@ const NavItem = styled.li`
   }
 `;
 
-const NavItems = ({ item, SetMenu }) => {
+const NavItems = ({ item }) => {
   return (
     <NavItem>
-      <label htmlFor="hamburger">
-        <a href={`#${item.name}`} rel="noopener noreferrer">
-          {item.name}
-        </a>
-      </label>
+      <a href={`#${item.name}`} rel="noopener noreferrer">
+        {item.name}
+      </a>
     </NavItem>
   );
 };

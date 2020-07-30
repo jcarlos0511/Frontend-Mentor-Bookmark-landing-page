@@ -6,16 +6,22 @@ import NavItems from "./items/navItems";
 import styled from "styled-components";
 import { FormattedIcons } from "../icons";
 import { theme } from "../styles";
+import { useScroll } from "../customHooks/useScroll";
 
 const { colors } = theme;
 
-const StyledContainer = styled.div`
+const StyledContainer = styled.header`
+  border: 1px solid red;
   position: fixed;
   top: 0;
   z-index: 3;
   width: 100%;
   padding: 2.2em 8%;
   background-color: ${colors.white};
+  transform: translateY(
+    ${(props) => (props.direction === "down" ? `-106px` : "0px")}
+  );
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 
   & .hamburger {
     display: none;
@@ -28,7 +34,7 @@ const StyledMenu = styled.div`
   justify-content: space-between;
 `;
 
-const StyledMenuActive = styled.ul`
+const StyledMenuActive = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
@@ -38,6 +44,10 @@ const StyledMenuActive = styled.ul`
   opacity: 0.95;
   user-select: none;
   z-index: 2;
+
+  & .hamburger {
+    display: none;
+  }
 
   & .menuHeader {
     padding: 2.2em 8%;
@@ -89,18 +99,44 @@ const Nav = () => {
 
   const ref = useRef(null);
 
-  return (
-    <StyledContainer>
-      <input
-        type="checkbox"
-        id="hamburger"
-        className="hamburger"
-        ref={ref}
-        onChange={() => SetMenu(ref.current.checked)}
-      />
+  // handle scroll
 
-      {menu ? (
+  const { x, y, direction } = useScroll();
+
+  console.log(x, y, direction);
+
+  return (
+    <>
+      {!menu && (
+        <StyledContainer direction={direction}>
+          <input
+            type="checkbox"
+            id="hamburger"
+            className="hamburger"
+            ref={ref}
+            onChange={() => SetMenu(ref.current.checked)}
+          />
+
+          <StyledMenu>
+            <FormattedIcons name={logoBookmark} />
+
+            <label htmlFor="hamburger">
+              <FormattedIcons name={iconHamburger} />
+            </label>
+          </StyledMenu>
+        </StyledContainer>
+      )}
+
+      {menu && (
         <StyledMenuActive>
+          <input
+            type="checkbox"
+            id="hamburger"
+            className="hamburger"
+            ref={ref}
+            onChange={() => SetMenu(!ref.current.checked)}
+          />
+
           <div className="menuHeader">
             <FormattedIcons name={logoBookmark} />
 
@@ -110,7 +146,7 @@ const Nav = () => {
           </div>
 
           {nav.items.map((item, index) => (
-            <NavItems key={index} item={item} SetMenu={SetMenu} />
+            <NavItems key={index} item={item} menu={menu} SetMenu={SetMenu} />
           ))}
 
           <div className="menuFooter">
@@ -119,16 +155,8 @@ const Nav = () => {
             <FormattedIcons name={iconTwitter} />
           </div>
         </StyledMenuActive>
-      ) : (
-        <StyledMenu>
-          <FormattedIcons name={logoBookmark} />
-
-          <label htmlFor="hamburger">
-            <FormattedIcons name={iconHamburger} />
-          </label>
-        </StyledMenu>
       )}
-    </StyledContainer>
+    </>
   );
 };
 

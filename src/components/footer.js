@@ -30,6 +30,7 @@ const StyledList = styled.ul`
 const StyledIcons = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 1.5em 0;
 
   & a .iconFacebook,

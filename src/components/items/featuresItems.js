@@ -16,6 +16,7 @@ const StyledName = styled.label`
   padding: 1em;
   display: block;
   position: relative;
+  cursor: pointer;
 `;
 
 const FeaturesItems = ({ item }) => {
