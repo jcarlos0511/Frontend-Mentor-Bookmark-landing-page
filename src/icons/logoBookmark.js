@@ -2,7 +2,12 @@ import React from "react";
 
 const LogoBookmark = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="148" height="25">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="148"
+      height="25"
+      className="logoBookmark"
+    >
       <g fill="none" fillRule="evenodd">
         <path
           className="logoTitle"

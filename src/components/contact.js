@@ -108,7 +108,7 @@ const StyledForm = styled.form`
 
   ${media.smDesktop`
     display: grid;
-    grid-template-columns: 300px 124px;
+    grid-template-columns: 300px 125px;
     column-gap: 1em;
     height: 3.5em;
   `}

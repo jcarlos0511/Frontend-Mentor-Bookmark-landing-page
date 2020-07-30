@@ -3,7 +3,7 @@ import { FormattedIcons } from "../icons";
 import BookmarkContext from "../context/bookmarkContext";
 
 import styled from "styled-components";
-import { theme } from "../styles";
+import { theme, media } from "../styles";
 import { FooterItems } from ".";
 
 const { colors } = theme;
@@ -14,17 +14,49 @@ const StyledContainer = styled.footer`
 
 const StyledContent = styled.div`
   margin: 0 8%;
-  padding: 2.2em 0;
+  padding: 1.5em 0;
   text-align: center;
   position: relative;
 
-  & .logoTitle {
-    fill: ${colors.white};
-  }
+  ${media.smDesktop`
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+    margin: 0 10%;
+    padding: .75em 0;
+  `}
+
+  ${media.lgDesktop`
+    margin: 0 12%;
+  `}
 `;
 
 const StyledList = styled.ul`
   margin: 1em auto;
+
+  ${media.smDesktop`
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 0;
+  `}
+
+  & .logoBookmark {
+    margin-bottom: 1em;
+
+    ${media.smDesktop`
+      margin-right: 2.8em;
+    `}
+
+    & .logoTitle {
+      fill: ${colors.white};
+    }
+
+    ${media.smDesktop`
+      margin-bottom: 0;
+  `}
+  }
 `;
 
 const StyledIcons = styled.div`
@@ -56,9 +88,9 @@ const Footer = () => {
   return (
     <StyledContainer>
       <StyledContent>
-        <FormattedIcons name={logoBookmark} />
-
         <StyledList>
+          <FormattedIcons name={logoBookmark} />
+
           {items.map((item, i) => (
             <FooterItems key={i} item={item} />
           ))}

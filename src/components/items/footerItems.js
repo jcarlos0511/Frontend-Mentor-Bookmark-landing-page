@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../../styles";
+import { theme, media } from "../../styles";
 
 const { fontSizes, colors } = theme;
 
@@ -11,6 +11,10 @@ const StyledItem = styled.li`
   padding: 1.4em 0;
   font-size: ${fontSizes.sm};
   letter-spacing: 0.15em;
+
+  ${media.smDesktop`
+    padding: 0 1.4em;
+  `}
 
   & a:hover {
     color: ${colors.softRed};

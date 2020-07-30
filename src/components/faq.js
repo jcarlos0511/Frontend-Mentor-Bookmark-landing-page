@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import BookmarkContext from "../context/bookmarkContext";
 
 import styled from "styled-components";
-import { theme, Button } from "../styles";
+import { theme, Button, media } from "../styles";
 import { FaqItems } from ".";
 
 const { colors, fontSizes } = theme;
@@ -12,6 +12,11 @@ const StyledContainer = styled.div`
   padding: 5em 0;
   text-align: center;
 
+  ${media.smDesktop`
+    margin: 0 auto;
+    width: 540px;
+  `}
+
   & .acc {
     display: none;
   }
@@ -20,12 +25,29 @@ const StyledContainer = styled.div`
 const StyledTitle = styled.h2`
   font-size: ${fontSizes.xl};
   font-weight: 500;
-  margin: 0;
+
+  ${media.mdDesktop`
+    font-size: ${fontSizes.xxl};
+  `}
+
+  ${media.lgDesktop`
+    font-size: ${fontSizes.xxxl};
+  `}
 `;
 
 const StyledDescription = styled.p`
   font-size: ${fontSizes.sm};
   line-height: 1.65em;
+
+  ${media.mdDesktop`
+    font-size: ${fontSizes.md};
+    margin: 0 1em;
+  `}
+
+  ${media.lgDesktop`
+    font-size: ${fontSizes.lg};
+    margin: 0 1em;
+  `}
 `;
 
 const StyledList = styled.ul`
@@ -68,7 +90,7 @@ const Faq = () => {
           name="acc"
           id={id}
           value={id}
-          onChange={handleChange}
+          onClick={handleChange}
         />
       ))}
 
