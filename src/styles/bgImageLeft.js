@@ -16,6 +16,18 @@ const StyledBgImage = styled.div`
   margin-bottom: 3.25em;
   margin-left: -22.5%;
 
+  ${media.lgPhone`
+    margin-left: -28%;
+  `};
+
+  ${media.mdTablet`
+    margin-left: -35%;
+  `};
+
+  ${media.lgTablet`
+    margin-left: -45%;
+  `};
+
   ${media.smDesktop`
     border-bottom-right-radius: 200px;
     height: 275px;

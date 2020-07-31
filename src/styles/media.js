@@ -5,8 +5,8 @@ const sizes = {
   mdDesktop: 1280,
   smDesktop: 1024,
   lgTablet: 768,
-  mdTablet: 600,
-  lgPhone: 480,
+  mdTablet: 540,
+  lgPhone: 425,
   smPhone: 374,
   xsPhone: 330,
 };

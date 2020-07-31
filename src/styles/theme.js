@@ -23,6 +23,7 @@ const theme = {
     xl: "1.33em", //23px
     xxl: "1.55em", //27px
     xxxl: "1.66em", //30px
+    xlplus: "2em", //36px
   },
 };
 

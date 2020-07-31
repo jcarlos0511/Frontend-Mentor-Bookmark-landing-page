@@ -8,11 +8,11 @@ const StyledTabs = styled.article`
   display: none;
   position: relative;
   margin-top: 1.5em;
+  margin-left: auto;
+  margin-right: auto;
 
   ${media.smDesktop`
     width: 820px;
-    margin-left: auto;
-    margin-right: auto;
   `};
 
   ${media.mdDesktop`
@@ -26,6 +26,7 @@ const StyledTabs = styled.article`
   & svg {
     max-width: 375px;
     max-height: 300px;
+    width: 100%;
 
     ${media.smDesktop`
       max-width: 450px;
