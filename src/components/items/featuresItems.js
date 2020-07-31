@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../../styles";
+import { theme, media } from "../../styles";
 
 const { colors, fontSizes } = theme;
 
@@ -10,6 +10,11 @@ const StyledItem = styled.li`
   color: ${colors.veryGrayishBlue};
   font-weight: 400;
   position: relative;
+
+  ${media.smDesktop`
+      border-top: none;
+      border-bottom:  1px solid ${colors.lightGrayishBlue}; 
+  `}
 `;
 
 const StyledName = styled.label`
@@ -17,6 +22,10 @@ const StyledName = styled.label`
   display: block;
   position: relative;
   cursor: pointer;
+
+  ${media.smDesktop`
+    padding: 1.5em;
+  `}
 `;
 
 const FeaturesItems = ({ item }) => {

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import BookmarkContext from "../context/bookmarkContext";
 import styled from "styled-components";
-import { theme } from "../styles";
+import { theme, media } from "../styles";
 import { FeaturesItems, TabItems } from ".";
 
 const { colors, fontSizes } = theme;
@@ -11,12 +11,33 @@ const StyledContainer = styled.div`
   padding: 2.2em 0;
   text-align: center;
 
+  ${media.smDesktop`
+    margin: 0 10%;
+  `}
+
+  ${media.mdDesktop`
+    margin: 0 11%;
+    padding: 4.2em 0;
+  `}
+
+  ${media.lgDesktop`
+    margin: 0 12%;
+    padding: 6.2em 0;
+  `}
+
   & input {
     display: none;
   }
 
   & input[id="Simple Bookmarking"]:checked ~ .tab-Bookmarking {
     display: inline-block;
+
+    ${media.smDesktop`
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      column-gap: 6em;
+    `}
   }
 
   &
@@ -30,10 +51,26 @@ const StyledContainer = styled.div`
     height: 4px;
     right: calc(50% - 70px);
     background-color: ${colors.softRed};
+
+    ${media.smDesktop`
+      width: 100%;
+      right:0;      
+    `}
   }
 
   & input[id="Speedy Searching"]:checked ~ .tab-Searching {
     display: inline-block;
+
+    ${media.smDesktop`
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      column-gap: 3em;
+    `}
+
+    ${media.smDesktop`
+      column-gap: 6em;
+    `}
   }
 
   & input[id="Speedy Searching"]:checked ~ ul [for="Speedy Searching"]::after {
@@ -44,10 +81,22 @@ const StyledContainer = styled.div`
     height: 4px;
     right: calc(50% - 70px);
     background-color: ${colors.softRed};
+
+    ${media.smDesktop`
+      width: 100%;
+      right:0;
+    `}
   }
 
   & input[id="Easy Sharing"]:checked ~ .tab-Sharing {
     display: inline-block;
+
+    ${media.smDesktop`
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      column-gap: 6em;
+    `}
   }
 
   & input[id="Easy Sharing"]:checked ~ ul [for="Easy Sharing"]::after {
@@ -58,24 +107,59 @@ const StyledContainer = styled.div`
     height: 4px;
     right: calc(50% - 70px);
     background-color: ${colors.softRed};
+
+    ${media.smDesktop`
+      width: 100%;
+      right:0;
+    `}
   }
 `;
 
 const StyledTitle = styled.h2`
   font-size: ${fontSizes.xl};
   font-weight: 500;
+
+  ${media.mdDesktop`
+    font-size: ${fontSizes.xxl};
+  `}
+
+  ${media.lgDesktop`
+    font-size: ${fontSizes.xxxl};
+  `}
 `;
 
 const StyledDescription = styled.p`
   font-size: ${fontSizes.sm};
   line-height: 1.65em;
+
+  ${media.smDesktop`
+    margin: 0 auto;
+    width: 540px;
+  `}
+
+  ${media.mdDesktop`
+    font-size: ${fontSizes.md};
+  `}
+
+  ${media.lgDesktop`
+    font-size: ${fontSizes.lg};
+  `}
 `;
 
 const StyledMenu = styled.ul`
   padding: 1.5em 0;
 
-  & li:last-child {
-    border-bottom: 1px solid ${colors.lightGrayishBlue};
+  ${media.smDesktop`
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 0 auto;
+      width: 740px;
+  `}
+
+  & li {
+    &:last-child {
+      border-bottom: 1px solid ${colors.lightGrayishBlue};
+    }
   }
 `;
 
