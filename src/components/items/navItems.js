@@ -1,33 +1,26 @@
 import React from "react";
 
 import styled from "styled-components";
-import { theme, media } from "../../styles";
+import { theme } from "../../styles";
 const { colors, fontSizes } = theme;
 
 const NavItem = styled.li`
-  color: ${colors.white};
-  text-transform: uppercase;
-  margin: 0 8%;
-  padding: 1.4em 0;
   border-top: 1px solid ${colors.grayishBlue};
-  text-align: center;
+  color: ${colors.white};
   font-size: ${fontSizes.sm};
   letter-spacing: 0.15em;
   list-style: none;
+  margin: 0 8%;
+  padding: 1.4em 0;
   position: relative;
-
-  &.mode-desktop {
-    color: ${colors.veryDarkBlue};
-    border-top: none;
-    padding: 0;
-    margin: 0;
-  }
+  text-align: center;
+  text-transform: uppercase;
 
   &:last-of-type .link {
     border: 2px solid ${colors.white};
     width: 100%;
     padding: 0.833em 0;
-    border-radius: 6px;
+    border-radius: 5px;
 
     &:hover {
       border: 2px solid ${colors.softRed};
@@ -36,6 +29,27 @@ const NavItem = styled.li`
 
   & .link:hover {
     color: ${colors.softRed};
+  }
+
+  &.mode-desktop {
+    color: ${colors.veryDarkBlue};
+    border-top: none;
+    font-size: ${fontSizes.xs};
+    padding: 0;
+    margin: 0;
+
+    &:last-of-type .link {
+      border: 2px solid ${colors.softRed};
+      background-color: ${colors.softRed};
+      color: ${colors.white};
+      padding: 0.75em 1.5em;
+
+      &:hover {
+        background-color: ${colors.white};
+        color: ${colors.softRed};
+        transition: background-color 0.3s ease;
+      }
+    }
   }
 `;
 

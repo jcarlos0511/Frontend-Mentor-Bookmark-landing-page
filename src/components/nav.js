@@ -45,12 +45,12 @@ const StyledMenu = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  & .IconHamburger {
+  & label {
     ${media.smDesktop`
       display: none;
     `}
 
-    &:active {
+    & .IconHamburger:active {
       transform: rotate(180deg);
       transition: all 0.5s ease;
     }
@@ -61,10 +61,18 @@ const StyledList = styled.ul`
   display: none;
 
   ${media.smDesktop`
-      display: flex;
-      width: 450px;
-      justify-content: space-between;
-      align-items: center;
+    display: flex;
+    width: 350px;
+    justify-content: space-between;
+    align-items: center;
+  `}
+
+  ${media.mdDesktop`
+    width: 400px;
+  `}
+
+  ${media.lgDesktop`
+    width: 450px;
   `}
 `;
 
@@ -74,7 +82,7 @@ const StyledMenuActive = styled.nav`
   left: 0;
   bottom: 0;
   right: 0;
-  background: ${colors.veryDarkBlue};
+  background-color: ${colors.veryDarkBlue};
   opacity: 0.95;
   user-select: none;
   z-index: 2;
