@@ -111,6 +111,8 @@ const StyledForm = styled.form`
     grid-template-columns: 300px 125px;
     column-gap: 1em;
     height: 3.5em;
+
+    
   `}
 `;
 
@@ -215,7 +217,7 @@ const Contact = () => {
 
           <div>
             <Button
-              className="FormButton"
+              expanded="100%"
               background={colors.softRed}
               bShadow="none"
               border={colors.softRed}

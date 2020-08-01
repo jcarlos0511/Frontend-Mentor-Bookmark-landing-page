@@ -12,6 +12,7 @@ const StyledContainer = styled.article`
   padding-top: 3em;
   padding-bottom: 1.5em;
   margin: 0 auto;
+  margin-bottom: 1em;
   width: 300px;
   box-shadow: 0px 10px 10px -3px ${colors.lightGrayishBlue};
 

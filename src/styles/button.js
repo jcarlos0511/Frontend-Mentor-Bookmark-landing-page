@@ -5,7 +5,7 @@ import { theme } from ".";
 const { colors, fontSizes } = theme;
 
 const StyledButton = styled.button`
-  width: auto;
+  width: ${(props) => (props.expanded ? "100%" : "auto")};
   border-radius: 5px;
   padding: 0.9em;
   font-size: ${fontSizes.sm};
@@ -39,9 +39,14 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ background, border, bShadow, title }) => {
+const Button = ({ background, border, bShadow, title, expanded }) => {
   return (
-    <StyledButton bShadow={bShadow} background={background} border={border}>
+    <StyledButton
+      bShadow={bShadow}
+      background={background}
+      border={border}
+      expanded={expanded}
+    >
       {title}
     </StyledButton>
   );

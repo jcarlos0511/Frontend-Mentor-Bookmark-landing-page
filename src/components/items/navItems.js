@@ -1,7 +1,7 @@
 import React from "react";
 
 import styled from "styled-components";
-import { theme } from "../../styles";
+import { theme, media } from "../../styles";
 const { colors, fontSizes } = theme;
 
 const NavItem = styled.li`
@@ -15,6 +15,13 @@ const NavItem = styled.li`
   letter-spacing: 0.15em;
   list-style: none;
   position: relative;
+
+  &.mode-desktop {
+    color: ${colors.veryDarkBlue};
+    border-top: none;
+    padding: 0;
+    margin: 0;
+  }
 
   &:last-of-type .link {
     border: 2px solid ${colors.white};
@@ -32,9 +39,9 @@ const NavItem = styled.li`
   }
 `;
 
-const NavItems = ({ item, SetMenu }) => {
+const NavItems = ({ item, SetMenu, desktop }) => {
   return (
-    <NavItem>
+    <NavItem className={desktop}>
       <a
         className="link"
         href={`#${item.name}`}

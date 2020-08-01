@@ -5,7 +5,7 @@ import NavItems from "./items/navItems";
 
 import styled from "styled-components";
 import { FormattedIcons } from "../icons";
-import { theme } from "../styles";
+import { theme, media } from "../styles";
 import { useScroll } from "../customHooks/useScroll";
 
 const { colors } = theme;
@@ -26,6 +26,18 @@ const StyledContainer = styled.header`
   & .hamburger {
     display: none;
   }
+
+  ${media.smDesktop`
+    padding: ${(props) => (props.y === 0 ? `2.2em` : ".75em")} 10%;
+  `}
+
+  ${media.mdDesktop`
+    padding: ${(props) => (props.y === 0 ? `2.2em` : ".75em")} 11%;
+  `}
+
+  ${media.lgDesktop`
+    padding: ${(props) => (props.y === 0 ? `2.2em` : ".75em")} 12%;
+  `}
 `;
 
 const StyledMenu = styled.div`
@@ -33,10 +45,27 @@ const StyledMenu = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  & .IconHamburger:active {
-    transform: rotate(180deg);
-    transition: all 0.5s ease;
+  & .IconHamburger {
+    ${media.smDesktop`
+      display: none;
+    `}
+
+    &:active {
+      transform: rotate(180deg);
+      transition: all 0.5s ease;
+    }
   }
+`;
+
+const StyledList = styled.ul`
+  display: none;
+
+  ${media.smDesktop`
+      display: flex;
+      width: 450px;
+      justify-content: space-between;
+      align-items: center;
+  `}
 `;
 
 const StyledMenuActive = styled.nav`
@@ -133,6 +162,17 @@ const Nav = () => {
 
           <StyledMenu>
             <FormattedIcons name={logoBookmark} />
+
+            <StyledList>
+              {nav.items.map((item, index) => (
+                <NavItems
+                  key={index}
+                  item={item}
+                  SetMenu={SetMenu}
+                  desktop="mode-desktop"
+                />
+              ))}
+            </StyledList>
 
             <label htmlFor="hamburger">
               <FormattedIcons name={iconHamburger} />
