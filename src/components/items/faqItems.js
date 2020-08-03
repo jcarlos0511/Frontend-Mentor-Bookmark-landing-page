@@ -14,16 +14,14 @@ const StyledContainer = styled.li`
   border-bottom: 1px solid ${colors.lightGrayishBlue};
 `;
 
-const StyledContent = styled.label`
+const StyledLabel = styled.label`
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
-`;
-
-const StyledQuestion = styled.p`
   color: ${colors.veryDarkBlue};
   font-weight: 400;
+  padding: 0.75em 0;
 
   &:hover {
     color: ${colors.softRed};
@@ -40,8 +38,8 @@ const FaqItems = ({ acc, iconArrow, state }) => {
 
   return (
     <StyledContainer>
-      <StyledContent htmlFor={id}>
-        <StyledQuestion>{question}</StyledQuestion>
+      <StyledLabel htmlFor={id}>
+        {question}
 
         {state.acc === id ? (
           <FormattedIcons
@@ -58,7 +56,7 @@ const FaqItems = ({ acc, iconArrow, state }) => {
             transition={"transform .3s ease"}
           />
         )}
-      </StyledContent>
+      </StyledLabel>
 
       {state.acc === id ? <StyledAnswer>{answer}</StyledAnswer> : null}
     </StyledContainer>

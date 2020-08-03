@@ -98,7 +98,9 @@ const Footer = () => {
     <StyledContainer>
       <StyledContent>
         <StyledList>
-          <FormattedIcons name={logoBookmark} />
+          <div>
+            <FormattedIcons name={logoBookmark} />
+          </div>
 
           {items.map((item, i) => (
             <FooterItems key={i} item={item} />

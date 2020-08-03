@@ -196,17 +196,18 @@ const Contact = () => {
 
         <StyledTitle>{title}</StyledTitle>
 
-        <StyledForm onSubmit={handleSubmit} noValidate>
+        <StyledForm id="contact__form" onSubmit={handleSubmit} noValidate>
           <div>
             <input
-              ref={ref}
-              type="text"
-              name="email"
               autoComplete="email"
-              placeholder="Enter your email address"
-              value={email.email}
               className={`email ${errors.name !== "" && "isActive"}`}
+              name="email"
               onChange={handleChange}
+              placeholder="Enter your email address"
+              ref={ref}
+              title="contact__email"
+              type="text"
+              value={email.email}
             />
 
             {errors.name !== "" && <span>{errors.name}</span>}

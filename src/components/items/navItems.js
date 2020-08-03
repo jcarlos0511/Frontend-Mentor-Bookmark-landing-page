@@ -55,11 +55,11 @@ const NavItem = styled.li`
 
 const NavItems = ({ item, SetMenu, desktop }) => {
   return (
-    <NavItem className={desktop}>
+    <NavItem id={`nav__${item.name}`} className={desktop}>
       <a
         className="link"
         href={`#${item.name}`}
-        id={item.name}
+        id={`link__${item.name}`}
         name={item.name}
         onClick={() => SetMenu(false)}
         rel="noopener noreferrer"
