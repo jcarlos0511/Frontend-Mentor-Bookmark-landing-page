@@ -200,8 +200,9 @@ const Contact = () => {
           <div>
             <input
               ref={ref}
-              type="email"
+              type="text"
               name="email"
+              autoComplete="email"
               placeholder="Enter your email address"
               value={email.email}
               className={`email ${errors.name !== "" && "isActive"}`}

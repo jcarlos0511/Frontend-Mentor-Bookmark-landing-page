@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledIconArrow = styled.svg`
-  transform: ${(props) => props.rotate};
+  transform: ${(props) => props.isRotate};
   transition: ${(props) => props.transition};
 `;
 
@@ -13,7 +13,7 @@ const IconArrow = ({ color, rotate, transition }) => {
       width="18"
       height="12"
       className="IconArrow"
-      rotate={rotate}
+      isRotate={rotate}
       transition={transition}
     >
       <path fill="none" stroke={color} strokeWidth="3" d="M1 1l8 8 8-8"></path>

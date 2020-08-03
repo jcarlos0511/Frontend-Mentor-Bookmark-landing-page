@@ -59,9 +59,10 @@ const NavItems = ({ item, SetMenu, desktop }) => {
       <a
         className="link"
         href={`#${item.name}`}
-        rel="noopener noreferrer"
+        id={item.name}
         name={item.name}
         onClick={() => SetMenu(false)}
+        rel="noopener noreferrer"
       >
         {item.name}
       </a>

@@ -109,7 +109,7 @@ const Footer = () => {
           <a
             href="https://www.facebook.com/"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="nofollow noopener noreferrer"
           >
             <FormattedIcons name={iconFacebook} />
           </a>
@@ -117,7 +117,7 @@ const Footer = () => {
           <a
             href="https://twitter.com/home"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="nofollow noopener noreferrer"
           >
             <FormattedIcons name={iconTwitter} />
           </a>

@@ -29,7 +29,7 @@ const StyledContainer = styled.div`
     display: none;
   }
 
-  & input[id="Simple Bookmarking"]:checked ~ .tab-Bookmarking {
+  & input[id="simplebookmaking"]:checked ~ .tab-Bookmarking {
     display: inline-block;
 
     ${media.smDesktop`
@@ -41,9 +41,9 @@ const StyledContainer = styled.div`
   }
 
   &
-    input[id="Simple Bookmarking"]:checked
+    input[id="simplebookmaking"]:checked
     ~ ul
-    [for="Simple Bookmarking"]::after {
+    [for="simplebookmaking"]::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -58,7 +58,7 @@ const StyledContainer = styled.div`
     `}
   }
 
-  & input[id="Speedy Searching"]:checked ~ .tab-Searching {
+  & input[id="speedysearching"]:checked ~ .tab-Searching {
     display: inline-block;
 
     ${media.smDesktop`
@@ -73,7 +73,7 @@ const StyledContainer = styled.div`
     `}
   }
 
-  & input[id="Speedy Searching"]:checked ~ ul [for="Speedy Searching"]::after {
+  & input[id="speedysearching"]:checked ~ ul [for="speedysearching"]::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -88,7 +88,7 @@ const StyledContainer = styled.div`
     `}
   }
 
-  & input[id="Easy Sharing"]:checked ~ .tab-Sharing {
+  & input[id="easysharing"]:checked ~ .tab-Sharing {
     display: inline-block;
 
     ${media.smDesktop`
@@ -99,7 +99,7 @@ const StyledContainer = styled.div`
     `}
   }
 
-  & input[id="Easy Sharing"]:checked ~ ul [for="Easy Sharing"]::after {
+  & input[id="easysharing"]:checked ~ ul [for="easysharing"]::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -187,7 +187,7 @@ const Features = () => {
         <input
           key={index}
           type="radio"
-          id={item.name}
+          id={item.id}
           name="menu"
           value={item.name}
           checked={state.menu === item.name}

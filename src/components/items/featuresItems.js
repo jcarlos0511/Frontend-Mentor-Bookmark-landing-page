@@ -31,7 +31,7 @@ const StyledName = styled.label`
 const FeaturesItems = ({ item }) => {
   return (
     <StyledItem>
-      <StyledName htmlFor={item.name}>{item.name}</StyledName>
+      <StyledName htmlFor={item.id}>{item.name}</StyledName>
     </StyledItem>
   );
 };

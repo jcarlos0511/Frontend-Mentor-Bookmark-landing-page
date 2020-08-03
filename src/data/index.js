@@ -27,9 +27,9 @@ export const data = {
         description:
           "Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.",
         list: [
-          { name: "Simple Bookmarking" },
-          { name: "Speedy Searching" },
-          { name: "Easy Sharing" },
+          { id: "simplebookmaking", name: "Simple Bookmarking" },
+          { id: "speedysearching", name: "Speedy Searching" },
+          { id: "easysharing", name: "Easy Sharing" },
         ],
         tabs: [
           {

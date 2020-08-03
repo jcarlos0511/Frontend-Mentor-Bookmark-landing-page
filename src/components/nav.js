@@ -16,10 +16,10 @@ const StyledContainer = styled.header`
   top: 0;
   z-index: 3;
   width: 100%;
-  padding: ${(props) => (props.y === 0 ? `2.2em` : ".75em")} 8%;
+  padding: ${(props) => (props.scrollY === 0 ? `2.2em` : ".75em")} 8%;
   background-color: ${colors.white};
   transform: translateY(
-    ${(props) => (props.direction === "down" ? `-106px` : "0px")}
+    ${(props) => (props.scrollDirection === "down" ? `-106px` : "0px")}
   );
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 
@@ -28,15 +28,15 @@ const StyledContainer = styled.header`
   }
 
   ${media.smDesktop`
-    padding: ${(props) => (props.y === 0 ? `2.2em` : ".75em")} 10%;
+    padding: ${(props) => (props.scrollY === 0 ? `2.2em` : ".75em")} 10%;
   `}
 
   ${media.mdDesktop`
-    padding: ${(props) => (props.y === 0 ? `2.2em` : ".75em")} 11%;
+    padding: ${(props) => (props.scrollY === 0 ? `2.2em` : ".75em")} 11%;
   `}
 
   ${media.lgDesktop`
-    padding: ${(props) => (props.y === 0 ? `2.2em` : ".75em")} 12%;
+    padding: ${(props) => (props.scrollY === 0 ? `2.2em` : ".75em")} 12%;
   `}
 `;
 
@@ -159,7 +159,7 @@ const Nav = () => {
   return (
     <>
       {!menu && (
-        <StyledContainer y={y} direction={direction}>
+        <StyledContainer scrollY={y} scrollDirection={direction}>
           <input
             type="checkbox"
             id="hamburger"
@@ -214,7 +214,7 @@ const Nav = () => {
           <div className="menuFooter">
             <a
               href="https://www.facebook.com/"
-              rel="noopener noreferrer"
+              rel="nofollow noopener noreferrer"
               target="_blank"
               onClick={() => SetMenu(false)}
             >
@@ -224,7 +224,7 @@ const Nav = () => {
             <a
               href="https://twitter.com/"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="nofollow noopener noreferrer"
               onClick={() => SetMenu(false)}
             >
               <FormattedIcons name={iconTwitter} />
